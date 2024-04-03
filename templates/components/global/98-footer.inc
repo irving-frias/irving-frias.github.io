@@ -1,6 +1,6 @@
 </main>
 <footer class="mt-auto">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-7">
         <h5>{{ translate('Section', 'es') }}</h5>
@@ -36,10 +36,10 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-12">
-      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top text-center">
         <p>{{ translate('© 2024 Irving Frias, Inc. All rights reserved.', 'es') }}</p>
         <ul class="list-unstyled d-flex">
           <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
