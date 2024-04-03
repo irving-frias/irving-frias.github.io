@@ -19,6 +19,7 @@
   "homepage": "https://github.com/irving-frias/irving-frias#readme",
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "fs": "0.0.1-security",
     "gulp": "^4.0.2",
     "gulp-cheerio": "^1.0.0",
