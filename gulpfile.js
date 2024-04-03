@@ -582,9 +582,9 @@ gulp.task('build', gulp.series([
  * Push build to gh-pages
  */
 gulp.task('deploy_gh', function () {
-  return gulp.src("./dist/**/*")
+  return gulp.src("./dist/*")
     .pipe(deploy({
-      remoteUrl: "git@github.com:irving-frias/irving-frias.git",
+      remoteUrl: "git@github.com:irving-frias/irving-frias.github.io.git",
       branch: "main"
     }))
 });
