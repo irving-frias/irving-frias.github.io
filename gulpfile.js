@@ -599,7 +599,7 @@ gulp.task('build-posts', function() {
                 <p>${data[i].description}</p>
 
                 <div class="read-more">
-                  <a href="${data[i].url}" class="btn btn-light">Read more</a>
+                  <a href="${data[i].url}" title="Go to ${data[i].title}" class="btn btn-light">Read more</a>
                 </div>
               </div>
             </div>
@@ -661,7 +661,7 @@ gulp.task('build-posts-es', function() {
                 <p>${data[i].description}</p>
 
                 <div class="read-more">
-                  <a href="${data[i].url}" class="btn btn-light">Leer más</a>
+                  <a href="${data[i].url}" title="Ir a ${data[i].title}" class="btn btn-light">Leer más</a>
                 </div>
               </div>
             </div>

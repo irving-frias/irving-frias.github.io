@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h5>{{ translate('Section', 'es') }}</h5>
+        <h2>{{ translate('Section', 'es') }}</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2">
             <a href="{{ translate('/', 'es') }}" data-translate-url="{{ reverse_url('/') }}" class="nav-link p-0 text-body-secondary">{{ translate('Home', 'es') }}</a>
@@ -25,7 +25,7 @@
 
       <div class="col-md-5">
         <form action="https://formsubmit.co/e8a243cd088ba52169929712e99b5e00" method="POST">
-          <h5>{{ translate('Contact me', 'es') }}</h5>
+          <h2>{{ translate('Contact me', 'es') }}</h5>
           <div class="d-flex flex-column flex-sm-row w-100 gap-2">
             <label for="email" class="visually-hidden">{{ translate('Email address', 'es') }}</label>
             <input type="email" name="email" class="form-control" placeholder="{{ translate('Email address', 'es') }}" required>
@@ -42,9 +42,21 @@
       <div class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 border-top text-center">
         <p>{{ translate('© 2024 Irving Frias, Inc. All rights reserved.', 'es') }}</p>
         <ul class="list-unstyled d-flex">
-          <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-          <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-          <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+          <li class="ms-3">
+            <a class="link-body-emphasis" href="https://twitter.com/irvingfrias41">
+              <svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg>
+            </a>
+          </li>
+            <li class="ms-3">
+              <a class="link-body-emphasis" href="https://www.instagram.com/gio_frias330/">
+                <svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg>
+            </a>
+          </li>
+          <li class="ms-3">
+              <a class="link-body-emphasis" href="https://www.facebook.com/gio.frias.73">
+                <svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg>
+              </a>
+          </li>
         </ul>
       </div>
       </div>

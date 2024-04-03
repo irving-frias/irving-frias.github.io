@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let pagination = posts.querySelector('.pagination');
   const currentLang = document.querySelector('html').getAttribute('lang');
   let read_more = currentLang == 'en' ? 'Read more' : 'Leer más';
+  let title_anchor = currentLang == 'en' ? 'Go to' : 'Ir a';
   const queryPage = parseInt(window.location.search.split('page=')[1], 10) || 1;
 
   let postsFetched = false;
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   <p>${post.description}</p>
 
                   <div class="read-more">
-                    <a href="${post.url}" class="btn btn-light">${read_more}</a>
+                    <a href="${post.url}" title="${title_anchor} ${data[i].title}" class="btn btn-light">${read_more}</a>
                   </div>
                 </div>
               </div>
@@ -95,7 +96,7 @@ function renderPagination(pages, pagination, lang, currentPage) {
   let prev_link = currentPage == 1
     ? `
     <li class="page-item disabled">
-      <a class="page-link">Previous</a>
+      <a class="page-link" rel="nofollow">Previous</a>
     </li>
     `
     : `
@@ -109,7 +110,7 @@ function renderPagination(pages, pagination, lang, currentPage) {
   let next_link = currentPage == pages
     ? `
     <li class="page-item disabled">
-      <a class="page-link">Next</a>
+      <a class="page-link" rel="nofollow">Next</a>
     </li>
     `
     : `
