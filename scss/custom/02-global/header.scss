@@ -1,0 +1,31 @@
+header{
+  nav{
+    .navbar-toggler{
+
+    }
+
+    .menu-opener{
+      ul{
+
+      }
+
+      .controls{
+        a + label {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg){
+  header{
+    nav{
+      .menu-opener{
+        ul + .controls{
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 </main>
 <footer class="mt-auto py-5">
-  <div class="container">
+  <div class="container social-section">
     <div class="row">
       <div class="col-md-7">
         <h2>{{ translate('Section', 'es') }}</h5>
@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container copyright-section">
     <div class="row">
       <div class="col-12">
       <div class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 border-top text-center">
