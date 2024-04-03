@@ -81,7 +81,21 @@
   }
 
   .pagination-section{
-    
+    nav{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 38px;
+
+      .pagination{
+        margin: 0;
+      }
+    }
+  }
+
+  .posts + .pagination-section{
+    margin-top: 50px;
   }
 }
 

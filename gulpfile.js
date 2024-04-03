@@ -19,6 +19,8 @@ const cheerio         = require('gulp-cheerio');
 const paginationator  = require('gulp-paginationator');
 const json            = require('gulp-json');
 const htmlmin         = require('gulp-htmlmin');
+const url             = require('url');
+const replace         = require('gulp-replace');
 
 //registerFont('assets/fonts/tacobox.ttf', { family: 'tacobox' });
 
@@ -554,6 +556,130 @@ gulp.task('copy-about-file', function() {
     .pipe(gulp.dest('dist/')); // Copy to the destination folder
 });
 
+gulp.task('build-posts', function() {
+  return gulp.src(['dist/posts.html'])
+    .pipe(replace('##CONTENT_REPLACE##', function(match) {
+      let data = JSON.parse(fs.readFileSync(`dist/paginated_json/en/page-1.json`, 'utf8')); // Read JSON file based on queryParam
+      data = data.data;
+      const numElements = Math.min(data.length, 9);
+      let html = '';
+      let counter = 0;
+      let classes = 'col-md-6 col-lg-4';
+      for (let i = 0; i < numElements; i++) {
+        if (counter == 0) {
+          classes = 'col-md-6 col-xl-6';
+        }
+
+        if (counter == 1) {
+          classes = 'col-md-6 col-xl-3';
+        }
+
+        if (counter == 2) {
+          classes = 'col-md-6 col-xl-3';
+        }
+
+        if (counter == 3) {
+          classes = 'col-md-6 col-xl-3';
+        }
+
+        if (counter == 4) {
+          classes = 'col-md-6 col-xl-3';
+        }
+
+        if (counter == 5) {
+          classes = 'col-md-6 col-xl-6';
+        }
+
+        html += `
+          <div class="post ${classes}">
+            <div class="post-item h-100">
+              <div class="content">
+                <h2>${data[i].title}</h2>
+
+                <p>${data[i].description}</p>
+
+                <div class="read-more">
+                  <a href="${data[i].url}" class="btn btn-light">Read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        counter++;
+
+        if (counter == 6) {
+          counter = 0;
+        }
+      }
+
+      return html;
+    }))
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('build-posts-es', function() {
+  return gulp.src(['dist/es/posts.html'])
+    .pipe(replace('##CONTENT_REPLACE##', function(match) {
+      let data = JSON.parse(fs.readFileSync(`dist/paginated_json/es/page-1.json`, 'utf8')); // Read JSON file based on queryParam
+      data = data.data;
+      const numElements = Math.min(data.length, 9);
+      let html = '';
+      let counter = 0;
+      let classes = 'col-md-6 col-lg-4';
+      for (let i = 0; i < numElements; i++) {
+        if (counter == 0) {
+          classes = 'col-md-6 col-xl-6';
+        }
+
+        if (counter == 1) {
+          classes = 'col-md-6 col-xl-3';
+        }
+
+        if (counter == 2) {
+          classes = 'col-md-6 col-xl-3';
+        }
+
+        if (counter == 3) {
+          classes = 'col-md-6 col-xl-3';
+        }
+
+        if (counter == 4) {
+          classes = 'col-md-6 col-xl-3';
+        }
+
+        if (counter == 5) {
+          classes = 'col-md-6 col-xl-6';
+        }
+
+        html += `
+          <div class="post ${classes}">
+            <div class="post-item h-100">
+              <div class="content">
+                <h2>${data[i].title}</h2>
+
+                <p>${data[i].description}</p>
+
+                <div class="read-more">
+                  <a href="${data[i].url}" class="btn btn-light">Leer más</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        counter++;
+
+        if (counter == 6) {
+          counter = 0;
+        }
+      }
+      return html;
+    }))
+    .pipe(gulp.dest('dist/es'));
+});
+
+
 
 gulp.task('build', gulp.series([
   'sass',
@@ -576,6 +702,8 @@ gulp.task('build', gulp.series([
   'run_shell_script',
   'pagination',
   'pagination-es',
+  'build-posts',
+  'build-posts-es'
 ]));
 
 /**

@@ -33,6 +33,7 @@
     "gulp-minify-css": "^1.2.4",
     "gulp-paginationator": "^0.1.0",
     "gulp-remove-sourcemaps": "^1.0.5",
+    "gulp-replace": "^1.1.4",
     "gulp-rm": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",

@@ -1,7 +1,7 @@
 <section id="posts">
   <div class="container">
     <div class="row posts">
-      
+      ##CONTENT_REPLACE##
     </div>
 
     <div class="row pagination-section">
