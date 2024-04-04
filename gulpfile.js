@@ -46,7 +46,7 @@ function extractPageTitle(htmlContent) {
 }
 
 // Function to generate OG image
-async function generateOGImage(text, folder, file) {
+async function generateOGImage(text, folder, file, bgColor, textColor) {
   // Launch headless browser
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
@@ -74,8 +74,8 @@ async function generateOGImage(text, folder, file) {
                 justify-content: center; /* Center horizontally */
                 width: 100%;
                 height: 100%;
-                background-color: #007bff; /* Example background color */
-                color: #ffffff; /* Example text color */
+                background-color: ${bgColor}; /* Example background color */
+                color: ${textColor}; /* Example text color */
                 font-family: Arial, sans-serif; /* Example font family */
                 font-size: 48px; /* Example font size */
                 text-align: center;
@@ -241,7 +241,7 @@ gulp.task('twig', function () {
             // Check if the file exists
             fs.access(`./assets/pages/en/${file.replace('.html', '.png')}`, fs.constants.F_OK, (err) => {
               if (err) {
-                generateOGImage(pageTitle, './assets/pages/en/', file.replace('.html', '.png'));
+                generateOGImage(pageTitle, './assets/pages/en/', file.replace('.html', '.png'), "#000", "#fff");
               }
             });
           }
@@ -279,7 +279,7 @@ gulp.task('twig-es', function () {
             const pageTitle = extractPageTitle(content);
             fs.access(`./assets/pages/es/${file.replace('.html', '.png')}`, fs.constants.F_OK, (err) => {
               if (err) {
-                generateOGImage(pageTitle, './assets/pages/es/', file.replace('.html', '.png'));
+                generateOGImage(pageTitle, './assets/pages/es/', file.replace('.html', '.png'), "#000", "#fff");
               }
             });
           }
@@ -332,7 +332,7 @@ gulp.task('twig-posts', function () {
           const pageTitle = extractPageTitle(content);
           fs.access(`${convertedPath}/${file.replace('.html', '.png')}`, fs.constants.F_OK, (err) => {
             if (err) {
-              generateOGImage(pageTitle, convertedPath, file.replace('.html', '.png'));
+              generateOGImage(pageTitle, convertedPath, file.replace('.html', '.png'), "#000", "#fff");
             }
           });
         }
