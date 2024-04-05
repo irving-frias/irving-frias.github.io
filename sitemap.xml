@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         
-        <loc>https://irving-frias.netlify.app/about.html</loc>
+        <loc><https://irving-frias.github.io>/about.html</loc>
     
         
         <lastmod>2024-04-05T15:49:49.597Z</lastmod>
@@ -10,7 +10,7 @@
     </url>
     <url>
         
-        <loc>https://irving-frias.netlify.app/faqs.html</loc>
+        <loc><https://irving-frias.github.io>/faqs.html</loc>
     
         
         <lastmod>2024-04-05T15:49:59.343Z</lastmod>
@@ -18,7 +18,7 @@
     </url>
     <url>
         
-        <loc>https://irving-frias.netlify.app/features.html</loc>
+        <loc><https://irving-frias.github.io>/features.html</loc>
     
         
         <lastmod>2024-04-05T15:50:12.526Z</lastmod>
@@ -26,7 +26,7 @@
     </url>
     <url>
         
-        <loc>https://irving-frias.netlify.app/</loc>
+        <loc><https://irving-frias.github.io>/</loc>
     
         
         <lastmod>2024-04-05T15:50:21.762Z</lastmod>
@@ -34,7 +34,7 @@
     </url>
     <url>
         
-        <loc>https://irving-frias.netlify.app/landing-page.html</loc>
+        <loc><https://irving-frias.github.io>/landing-page.html</loc>
     
         
         <lastmod>2024-04-05T15:50:34.283Z</lastmod>
@@ -42,7 +42,7 @@
     </url>
     <url>
         
-        <loc>https://irving-frias.netlify.app/posts.html</loc>
+        <loc><https://irving-frias.github.io>/posts.html</loc>
     
         
         <lastmod>2024-04-05T15:50:42.678Z</lastmod>
@@ -50,7 +50,7 @@
     </url>
     <url>
         
-        <loc>https://irving-frias.netlify.app/pricing.html</loc>
+        <loc><https://irving-frias.github.io>/pricing.html</loc>
     
         
         <lastmod>2024-04-05T15:50:52.506Z</lastmod>
@@ -58,7 +58,7 @@
     </url>
     <url>
         
-        <loc>https://irving-frias.netlify.app/es/acerca-de.html</loc>
+        <loc><https://irving-frias.github.io>/es/acerca-de.html</loc>
     
         
         <lastmod>2024-04-05T15:50:58.400Z</lastmod>
@@ -66,7 +66,7 @@
     </url>
     <url>
         
-        <loc>https://irving-frias.netlify.app/es/caracteristicas.html</loc>
+        <loc><https://irving-frias.github.io>/es/caracteristicas.html</loc>
     
         
         <lastmod>2024-04-05T15:51:07.366Z</lastmod>
@@ -74,7 +74,7 @@
     </url>
     <url>
         
-        <loc>https://irving-frias.netlify.app/es/</loc>
+        <loc><https://irving-frias.github.io>/es/</loc>
     
         
         <lastmod>2024-04-05T15:51:17.192Z</lastmod>
@@ -82,7 +82,7 @@
     </url>
     <url>
         
-        <loc>https://irving-frias.netlify.app/es/posts.html</loc>
+        <loc><https://irving-frias.github.io>/es/posts.html</loc>
     
         
         <lastmod>2024-04-05T15:51:27.469Z</lastmod>
@@ -90,7 +90,7 @@
     </url>
     <url>
         
-        <loc>https://irving-frias.netlify.app/es/precios.html</loc>
+        <loc><https://irving-frias.github.io>/es/precios.html</loc>
     
         
         <lastmod>2024-04-05T15:51:34.656Z</lastmod>
@@ -98,7 +98,7 @@
     </url>
     <url>
         
-        <loc>https://irving-frias.netlify.app/es/preguntas-frecuentes.html</loc>
+        <loc><https://irving-frias.github.io>/es/preguntas-frecuentes.html</loc>
     
         
         <lastmod>2024-04-05T15:51:41.791Z</lastmod>
@@ -106,18 +106,18 @@
     </url>
     <url>
         
-        <loc>https://irving-frias.netlify.app/posts/2024/4/how-to-create-drupal-project.html</loc>
+        <loc><https://irving-frias.github.io>/posts/2024/4/how-to-create-drupal-project.html</loc>
     
         
-        <lastmod>2024-04-05T16:28:35.295Z</lastmod>
+        <lastmod>2024-04-05T18:53:46.264Z</lastmod>
     
     </url>
     <url>
         
-        <loc>https://irving-frias.netlify.app/es/posts/2024/4/como-crear-proyecto-de-drupal.html</loc>
+        <loc><https://irving-frias.github.io>/es/posts/2024/4/como-crear-proyecto-de-drupal.html</loc>
     
         
-        <lastmod>2024-04-05T16:45:33.806Z</lastmod>
+        <lastmod>2024-04-05T18:53:46.286Z</lastmod>
     
     </url>
 </urlset>
