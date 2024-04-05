@@ -5,14 +5,18 @@
       "url": "/posts/2024/4/how-to-add-disqus-comments-on-your-site",
       "description": "Learn the simple steps to seamlessly integrate Disqus comments onto your website. Engage your audience, foster discussion, and enhance user interaction with our easy-to-follow guide. Elevate your online presence and encourage community participation today!",
       "date": "",
-      "image": "/assets/posts/en/2024/4/how-to-add-disqus-comments-on-your-site.png"
+      "image": "/assets/posts/en/2024/4/how-to-add-disqus-comments-on-your-site.png",
+      "image_light": "/assets/posts/en/2024/4/how-to-add-disqus-comments-on-your-site-light.png",
+      "image_dark": "/assets/posts/en/2024/4/how-to-add-disqus-comments-on-your-site-dark.png"
     },
     {
       "title": "How to create Drupal project",
       "url": "/posts/2024/4/how-to-create-drupal-project",
       "description": "Learn how to install a Drupal project with this comprehensive guide. From setting up the necessary environment to configuring the database and navigating through the installation wizard, this step-by-step tutorial ensures a smooth installation process. Whether you're a beginner or an experienced developer, follow along to optimize your website for success with Drupal.",
       "date": "",
-      "image": "/assets/posts/en/2024/4/how-to-create-drupal-project.png"
+      "image": "/assets/posts/en/2024/4/how-to-create-drupal-project.png",
+      "image_light": "/assets/posts/en/2024/4/how-to-create-drupal-project-light.png",
+      "image_dark": "/assets/posts/en/2024/4/how-to-create-drupal-project-dark.png"
     }
   ],
   "pages": 1

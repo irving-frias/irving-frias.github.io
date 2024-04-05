@@ -20322,28 +20322,44 @@ footer .social-section + .copyright-section {
   padding-right: 10px;
 }
 #posts .posts .post + .post {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 #posts .posts .post .post-item {
   position: relative;
-  overflow: hidden;
   border-radius: 20px;
   min-height: 400px;
   background-color: var(--bs-body-color);
 }
+#posts .posts .post .post-item:has(.read-more a:hover) .image img {
+  filter: blur(4px);
+}
+#posts .posts .post .post-item:has(.read-more a:hover) .content h2, #posts .posts .post .post-item:has(.read-more a:hover) .content .h2, #posts .posts .post .post-item:has(.read-more a:hover) .content p {
+  filter: blur(4px);
+}
+#posts .posts .post .post-item:has(.read-more a:hover) .content .read-more a {
+  transform: scale(1.4);
+}
+#posts .posts .post .post-item:hover .image img {
+  transform: translateY(0);
+}
+#posts .posts .post .post-item .image {
+  position: relative;
+  padding: 35px;
+}
+#posts .posts .post .post-item .image img {
+  overflow: hidden;
+  border-radius: 20px;
+  transform: translateY(-55px);
+  transition: all 0.7s ease;
+  box-shadow: 0px 1px 26px 0px rgba(0, 0, 0, 0.75);
+}
 #posts .posts .post .post-item .content {
+  margin-top: auto;
   position: relative;
   padding: 40px 35px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
-}
-#posts .posts .post .post-item .content:has(.read-more a:hover) h2, #posts .posts .post .post-item .content:has(.read-more a:hover) .h2, #posts .posts .post .post-item .content:has(.read-more a:hover) p {
-  filter: blur(4px);
-}
-#posts .posts .post .post-item .content:has(.read-more a:hover) .read-more a {
-  transform: scale(1.4);
 }
 #posts .posts .post .post-item .content h2, #posts .posts .post .post-item .content .h2 {
   margin: 0;
@@ -20395,4 +20411,11 @@ footer .social-section + .copyright-section {
   #posts .posts .post:nth-child(3) {
     margin-top: 0;
   }
+}
+[data-bs-theme=dark] #posts .posts .post .post-item .image img.light {
+  display: none;
+}
+
+[data-bs-theme=light] #posts .posts .post .post-item .image img.dark {
+  display: none;
 }

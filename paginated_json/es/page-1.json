@@ -5,14 +5,18 @@
       "url": "/es/posts/2024/4/como-agregar-comentarios-de-disqus-en-tu-sitio-web",
       "description": "Aprenda los sencillos pasos para integrar perfectamente los comentarios de Disqus en su sitio web. Atraiga a su audiencia, fomente el debate y mejore la interacción de los usuarios con nuestra guía fácil de seguir. Mejore su presencia en línea y fomente la participación de la comunidad hoy mismo.",
       "date": "",
-      "image": "/assets/posts/es/2024/4/como-agregar-comentarios-de-disqus-en-tu-sitio-web.png"
+      "image": "/assets/posts/es/2024/4/como-agregar-comentarios-de-disqus-en-tu-sitio-web.png",
+      "image_light": "/assets/posts/es/2024/4/como-agregar-comentarios-de-disqus-en-tu-sitio-web-light.png",
+      "image_dark": "/assets/posts/es/2024/4/como-agregar-comentarios-de-disqus-en-tu-sitio-web-dark.png"
     },
     {
       "title": "Como crear proyecto de Drupal",
       "url": "/es/posts/2024/4/como-crear-proyecto-de-drupal",
       "description": "Aprenda a instalar un proyecto Drupal con esta completa guía. Desde la configuración del entorno necesario hasta la configuración de la base de datos y la navegación a través del asistente de instalación, este tutorial paso a paso garantiza un proceso de instalación sin problemas. Si usted es un principiante o un desarrollador experimentado, siga a lo largo de optimizar su sitio web para el éxito con Drupal.",
       "date": "",
-      "image": "/assets/posts/es/2024/4/como-crear-proyecto-de-drupal.png"
+      "image": "/assets/posts/es/2024/4/como-crear-proyecto-de-drupal.png",
+      "image_light": "/assets/posts/es/2024/4/como-crear-proyecto-de-drupal-light.png",
+      "image_dark": "/assets/posts/es/2024/4/como-crear-proyecto-de-drupal-dark.png"
     }
   ],
   "pages": 1

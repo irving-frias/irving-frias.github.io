@@ -96,40 +96,20 @@ document.addEventListener('DOMContentLoaded', function () {
         let counter = 0;
         let classes = 'col-md-6 col-lg-4';
         data.data.forEach(function (post) {
-          if (counter == 0) {
-            classes = 'col-md-6 col-xl-6';
-          }
-
-          if (counter == 1) {
-            classes = 'col-md-6 col-xl-3';
-          }
-
-          if (counter == 2) {
-            classes = 'col-md-6 col-xl-3';
-          }
-
-          if (counter == 3) {
-            classes = 'col-md-6 col-xl-3';
-          }
-
-          if (counter == 4) {
-            classes = 'col-md-6 col-xl-3';
-          }
-
-          if (counter == 5) {
-            classes = 'col-md-6 col-xl-6';
-          }
-
           let item = `
             <div class="post ${classes}">
-              <div class="post-item h-100">
+              <div class="post-item h-100 d-flex flex-column">
+                <div class="image">
+                  <img src="${post.image_light}" alt="${post.title}" class="object-fit-cover w-100 light">
+                  <img src="${post.image_dark}" alt="${post.title}" class="object-fit-cover w-100 dark">
+                </div>
                 <div class="content">
                   <h2>${post.title}</h2>
 
                   <p>${post.description}</p>
 
                   <div class="read-more">
-                    <a href="${post.url}" title="${title_anchor} ${data[i].title}" class="btn btn-light">${read_more}</a>
+                    <a href="${post.url}" title="${title_anchor} ${post.title}" class="btn btn-primary">${read_more}</a>
                   </div>
                 </div>
               </div>
