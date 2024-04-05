@@ -21,6 +21,7 @@ const json            = require('gulp-json');
 const htmlmin         = require('gulp-htmlmin');
 const url             = require('url');
 const replace         = require('gulp-replace');
+const sitemap         = require('gulp-sitemap');
 
 // Function to extract page title from HTML content without using a library
 function extractPageTitle(htmlContent) {
@@ -118,6 +119,33 @@ function getAllSubfolders(dirPath) {
 
   // Return the array of subfolders
   return subfolders;
+}
+
+const paths = {
+  pages: ['./dist/*.html', './dist/es/*.html', './dist/posts/**/**/*.html', './dist/es/posts/**/**/*.html'] // Adjust this based on your directory structure
+};
+
+function generateSitemap() {
+  const hostname = 'https://irving-frias.netlify.app'; // Replace with your website URL
+  const sitemapStream = fs.createWriteStream(path.resolve(__dirname, 'dist/sitemap.xml'));
+
+  return gulp.src(paths.pages, { base: './dist' })
+  .pipe(sitemap({
+      siteUrl: hostname,
+      map: (siteUrl, file) => {
+          // Remove .html extension from URLs and remove './dist/' prefix
+          let url = file.relative.replace(/^dist\//, '').replace(/\.html$/, '');
+          // Add 'es/' prefix for URLs in 'es/' directory
+          if (url.startsWith('es/')) {
+              url = url.replace(/^es\//, 'es/');
+          }
+
+          url = url.replace('.html', '');
+
+          return url;
+      }
+  }))
+  .pipe(gulp.dest('./dist')); // Output sitemap.xml to the root directory
 }
 
 // Global options.
@@ -728,7 +756,7 @@ gulp.task('build-posts-es', function() {
     .pipe(gulp.dest('dist/es'));
 });
 
-
+gulp.task('sitemap', generateSitemap);
 
 gulp.task('build', gulp.series([
   'clean',
@@ -753,7 +781,8 @@ gulp.task('build', gulp.series([
   'pagination',
   'pagination-es',
   'build-posts',
-  'build-posts-es'
+  'build-posts-es',
+  'sitemap'
 ]));
 
 /**
