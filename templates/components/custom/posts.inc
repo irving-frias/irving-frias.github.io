@@ -1,4 +1,4 @@
-<section id="posts">
+<section id="posts" class="py-5">
   <div class="container">
     <div class="row posts">
       ##CONTENT_REPLACE##

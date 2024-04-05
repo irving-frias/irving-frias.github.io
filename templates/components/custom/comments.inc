@@ -1,5 +1,5 @@
 <section class="comments">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <div class="col-12">
         <div id="disqus_thread"></div>
@@ -22,5 +22,9 @@
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
     })();
+
+    document.querySelector('#theme-mode').addEventListener('change', function (e) {
+      DISQUS.reset({ reload: true, config: disqus_config });
+    });
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

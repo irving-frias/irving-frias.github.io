@@ -1,12 +1,13 @@
 
 <!DOCTYPE html>
-<html lang="{{ translate('en', 'es') }}" class="h-100" data-bs-theme="dark" data-slug="{{ slug }}" data-slug-en="{{ slug_en }}" data-slug-es="{{ slug_es }}" data-description="{{ page_description }}" data-date="{{ date }}" data-image="{{ og_image }}">
+<html lang="{{ translate('en', 'es') }}" class="h-100" data-bs-theme="dark" data-slug="{{ slug }}" data-slug-en="{{ slug_en }}" data-slug-es="{{ slug_es }}" data-description="{{ page_description }}" data-date="{{ date }}" data-image="{{ og_image }}" data-image-light="{{ og_image_light }}" data-image-dark="{{ og_image_dark }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Irving Frias | {{ page_title }}</title>
+    <title>{{ page_title }} | Irving Frias</title>
     <link rel="stylesheet" href="/css/irving-frias.min.css" media="all" />
     <meta name="description" content="{{ page_description }}">
+    <meta property="og:type" content="{{ page_type }}">
     <meta property="og:image" itemprop="image primaryImageOfPage" content="{{ og_image }}">
     <meta property="og:title" content="{{ page_title }}">
     <meta property="og:description" content="{{ page_description }}">
@@ -25,7 +26,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h1>{{ page_title }}</h1>
+            <h1 class="visually-hidden">{{ page_title }}</h1>
           </div>
         </div>
       </div>

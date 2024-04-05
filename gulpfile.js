@@ -22,10 +22,6 @@ const htmlmin         = require('gulp-htmlmin');
 const url             = require('url');
 const replace         = require('gulp-replace');
 
-//registerFont('assets/fonts/tacobox.ttf', { family: 'tacobox' });
-
-process.setMaxListeners(15);
-
 // Function to extract page title from HTML content without using a library
 function extractPageTitle(htmlContent) {
   // Find the index of the opening <title> tag
@@ -46,7 +42,8 @@ function extractPageTitle(htmlContent) {
 }
 
 // Function to generate OG image
-async function generateOGImage(text, folder, file, bgColor, textColor) {
+async function generateOGImage(text, folder, file, bgColor, textColor, opacity = 1) {
+  process.setMaxListeners(15);
   // Launch headless browser
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
@@ -74,7 +71,7 @@ async function generateOGImage(text, folder, file, bgColor, textColor) {
                 justify-content: center; /* Center horizontally */
                 width: 100%;
                 height: 100%;
-                background-color: ${bgColor}; /* Example background color */
+                background-color: rgba(${bgColor}, ${opacity}); /* Example background color */
                 color: ${textColor}; /* Example text color */
                 font-family: Arial, sans-serif; /* Example font family */
                 font-size: 48px; /* Example font size */
@@ -239,9 +236,21 @@ gulp.task('twig', function () {
             const pageTitle = extractPageTitle(content);
 
             // Check if the file exists
-            fs.access(`./assets/pages/en/${file.replace('.html', '.png')}`, fs.constants.F_OK, (err) => {
+            fs.access(`./dist/assets/pages/en/${file.replace('.html', '.png')}`, fs.constants.F_OK, async (err) => {
               if (err) {
-                generateOGImage(pageTitle, './assets/pages/en/', file.replace('.html', '.png'), "#000", "#fff");
+                await generateOGImage(pageTitle, './dist/assets/pages/en/', file.replace('.html', '.png'), "0, 0, 0", "#fff");
+              }
+            });
+
+            fs.access(`./dist/assets/pages/en/${file.replace('.html', '-dark.png')}`, fs.constants.F_OK, async (err) => {
+              if (err) {
+                await generateOGImage(pageTitle, './dist/assets/pages/en/', file.replace('.html', '-dark.png'), "0, 0, 0", "#fff", 0.6);
+              }
+            });
+
+            fs.access(`./dist/assets/pages/en/${file.replace('.html', '-light.png')}`, fs.constants.F_OK, async (err) => {
+              if (err) {
+                await generateOGImage(pageTitle, './dist/assets/pages/en/', file.replace('.html', '-light.png'), "255, 255, 255", "#000", 0.6);
               }
             });
           }
@@ -277,9 +286,21 @@ gulp.task('twig-es', function () {
           if (file.endsWith('.html')) {
             const content = fs.readFileSync(path.join('./dist/es/', file), 'utf8');
             const pageTitle = extractPageTitle(content);
-            fs.access(`./assets/pages/es/${file.replace('.html', '.png')}`, fs.constants.F_OK, (err) => {
+            fs.access(`./dist/assets/pages/es/${file.replace('.html', '.png')}`, fs.constants.F_OK, async (err) => {
               if (err) {
-                generateOGImage(pageTitle, './assets/pages/es/', file.replace('.html', '.png'), "#000", "#fff");
+                await generateOGImage(pageTitle, './dist/assets/pages/es/', file.replace('.html', '.png'), "0, 0, 0", "#fff");
+              }
+            });
+
+            fs.access(`./dist/assets/pages/es/${file.replace('.html', '-dark.png')}`, fs.constants.F_OK, async (err) => {
+              if (err) {
+                await generateOGImage(pageTitle, './dist/assets/pages/es/', file.replace('.html', '-dark.png'), "0, 0, 0", "#fff", 0.6);
+              }
+            });
+
+            fs.access(`./dist/assets/pages/es/${file.replace('.html', '-light.png')}`, fs.constants.F_OK, async (err) => {
+              if (err) {
+                await generateOGImage(pageTitle, './dist/assets/pages/es/', file.replace('.html', '-light.png'), "255, 255, 255", "#000", 0.6);
               }
             });
           }
@@ -330,9 +351,21 @@ gulp.task('twig-posts', function () {
         if (file.endsWith('.html')) {
           const content = fs.readFileSync(path.join(lastValue, file), 'utf8');
           const pageTitle = extractPageTitle(content);
-          fs.access(`${convertedPath}/${file.replace('.html', '.png')}`, fs.constants.F_OK, (err) => {
+          fs.access(`./dist/${convertedPath}/${file.replace('.html', '.png')}`, fs.constants.F_OK, async (err) => {
             if (err) {
-              generateOGImage(pageTitle, convertedPath, file.replace('.html', '.png'), "#000", "#fff");
+              await generateOGImage(pageTitle, './dist/' + convertedPath, file.replace('.html', '.png'), "0, 0, 0", "#fff");
+            }
+          });
+
+          fs.access(`./dist/${convertedPath}/${file.replace('.html', '-dark.png')}`, fs.constants.F_OK, async (err) => {
+            if (err) {
+              await generateOGImage(pageTitle, './dist/' + convertedPath, file.replace('.html', '-dark.png'), "0, 0, 0", "#fff", 0.6);
+            }
+          });
+
+          fs.access(`./dist/${convertedPath}/${file.replace('.html', '-light.png')}`, fs.constants.F_OK, async (err) => {
+            if (err) {
+              await generateOGImage(pageTitle, './dist/' + convertedPath, file.replace('.html', '-light.png'), "255, 255, 255", "#000", 0.6);
             }
           });
         }
@@ -383,9 +416,21 @@ gulp.task('twig-posts-es', function () {
         if (file.endsWith('.html')) {
           const content = fs.readFileSync(path.join(lastValue, file), 'utf8');
           const pageTitle = extractPageTitle(content);
-          fs.access(`${convertedPath}/${file.replace('.html', '.png')}`, fs.constants.F_OK, (err) => {
+          fs.access(`./dist/${convertedPath}/${file.replace('.html', '.png')}`, fs.constants.F_OK, async (err) => {
             if (err) {
-              generateOGImage(pageTitle, convertedPath, file.replace('.html', '.png'));
+              await generateOGImage(pageTitle, './dist/' + convertedPath, file.replace('.html', '.png'), "0, 0, 0", "#fff");
+            }
+          });
+
+          fs.access(`./dist/${convertedPath}/${file.replace('.html', '-dark.png')}`, fs.constants.F_OK, async (err) => {
+            if (err) {
+              await generateOGImage(pageTitle, './dist/' + convertedPath, file.replace('.html', '-dark.png'), "0, 0, 0", "#fff", 0.6);
+            }
+          });
+
+          fs.access(`./dist/${convertedPath}/${file.replace('.html', '-light.png')}`, fs.constants.F_OK, async (err) => {
+            if (err) {
+              await generateOGImage(pageTitle, './dist/' + convertedPath, file.replace('.html', '-light.png'), "255, 255, 255", "#000", 0.6);
             }
           });
         }
@@ -509,6 +554,10 @@ gulp.task('js_min', function () {
 // Define a Gulp task to run the shell script
 gulp.task('run_shell_script', shell.task([
   'sh generate.sh'
+]));
+
+gulp.task('clean', shell.task([
+  'sh clean.sh'
 ]));
 
 gulp.task('copy-assets', function() {
@@ -682,6 +731,7 @@ gulp.task('build-posts-es', function() {
 
 
 gulp.task('build', gulp.series([
+  'clean',
   'sass',
   'css_min',
   'js',
