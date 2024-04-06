@@ -1,15 +1,6 @@
 {
   "data": [
     {
-      "title": "How to add disqus comments on your site",
-      "url": "/posts/2024/4/how-to-add-disqus-comments-on-your-site",
-      "description": "Learn the simple steps to seamlessly integrate Disqus comments onto your website. Engage your audience, foster discussion, and enhance user interaction with our easy-to-follow guide. Elevate your online presence and encourage community participation today!",
-      "date": "",
-      "image": "/assets/posts/en/2024/4/how-to-add-disqus-comments-on-your-site.png",
-      "image_light": "/assets/posts/en/2024/4/how-to-add-disqus-comments-on-your-site-light.png",
-      "image_dark": "/assets/posts/en/2024/4/how-to-add-disqus-comments-on-your-site-dark.png"
-    },
-    {
       "title": "How to create Drupal project",
       "url": "/posts/2024/4/how-to-create-drupal-project",
       "description": "Learn how to install a Drupal project with this comprehensive guide. From setting up the necessary environment to configuring the database and navigating through the installation wizard, this step-by-step tutorial ensures a smooth installation process. Whether you're a beginner or an experienced developer, follow along to optimize your website for success with Drupal.",
@@ -17,6 +8,24 @@
       "image": "/assets/posts/en/2024/4/how-to-create-drupal-project.png",
       "image_light": "/assets/posts/en/2024/4/how-to-create-drupal-project-light.png",
       "image_dark": "/assets/posts/en/2024/4/how-to-create-drupal-project-dark.png"
+    },
+    {
+      "title": "How to install Brew on macOS",
+      "url": "/posts/2024/4/how-to-install-brew-on-macos",
+      "description": "Learn how to effortlessly install Brew on macOS with our comprehensive guide! Follow simple steps to set up Brew, the essential package manager for macOS, and unlock a world of powerful software installation. Start enhancing your macOS experience today!.",
+      "date": "",
+      "image": "/assets/posts/en/2024/4/how-install-brew-on-macos.png",
+      "image_light": "/assets/posts/en/2024/4/how-to-install-brew-on-macos-light.png",
+      "image_dark": "/assets/posts/en/2024/4/how-to-install-brew-on-macos-dark.png"
+    },
+    {
+      "title": "How to install Composer on macOS",
+      "url": "/posts/2024/4/how-to-install-composer-on-macos",
+      "description": "Discover the easy steps to install Composer on macOS with our definitive guide! Unlock the power of Composer, the essential tool for managing PHP dependencies, and streamline your development workflow effortlessly. Follow our step-by-step instructions to get Composer up and running on your macOS system today!.",
+      "date": "",
+      "image": "/assets/posts/en/2024/4/how-install-composer-on-macos.png",
+      "image_light": "/assets/posts/en/2024/4/how-to-install-composer-on-macos-light.png",
+      "image_dark": "/assets/posts/en/2024/4/how-to-install-composer-on-macos-dark.png"
     }
   ],
   "pages": 1
