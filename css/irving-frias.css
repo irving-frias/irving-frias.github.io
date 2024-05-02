@@ -20528,3 +20528,7 @@ footer .social-section + .copyright-section {
   position: relative;
   z-index: 1;
 }
+
+#dof .actions {
+  position: relative;
+}
