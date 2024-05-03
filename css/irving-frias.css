@@ -20529,6 +20529,11 @@ footer .social-section + .copyright-section {
   z-index: 1;
 }
 
+#dof .carousel-inner .carousel-item .content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 #dof .actions {
   position: relative;
   display: flex;
