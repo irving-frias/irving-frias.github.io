@@ -29,5 +29,10 @@ const { lang } = Astro.params;
       <slot />
     </main>
     <Footer />
+
+    <script>
+      // Astro will bundle and process this automatically
+      import "bootstrap/dist/js/bootstrap.bundle.min.js";
+    </script>
   </body>
 </html>
