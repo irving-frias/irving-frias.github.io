@@ -9,6 +9,14 @@
     "title": "Home",
     "description": "Homepage."
   },
+  "about": {
+    "title": "About",
+    "description": "About."
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Contact."
+  },
   "posts": {
     "title": "Posts",
     "description": "Listing of posts."

@@ -9,6 +9,14 @@
     "title": "Inicio",
     "description": "Pagina de inicio."
   },
+  "about": {
+    "title": "Acerca",
+    "description": "Acerca."
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "Contacto."
+  },
   "posts": {
     "title": "Publicaciones",
     "description": "Listado de publicaciones."
