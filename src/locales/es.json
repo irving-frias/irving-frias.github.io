@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "about": "Acerca",
+    "contact": "Contacto",
+    "posts": "Publicaciones"
+  },
+  "home": {
+    "title": "Inicio",
+    "description": "Pagina de inicio."
+  },
+  "posts": {
+    "title": "Publicaciones",
+    "description": "Listado de publicaciones."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "posts": "Posts"
+  },
+  "home": {
+    "title": "Home",
+    "description": "Homepage."
+  },
+  "posts": {
+    "title": "Posts",
+    "description": "Listing of posts."
+  }
+}

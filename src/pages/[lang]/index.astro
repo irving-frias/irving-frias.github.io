@@ -1,0 +1,20 @@
+---
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.min.css";
+import Layout from "../../layouts/Layout.astro";
+const lang = Astro.params.lang;
+
+// Import translations based on the current language
+const translations = await import(`../../locales/${lang}.json`);
+
+export async function getStaticPaths() {
+  return [{ params: { lang: "en" } }, { params: { lang: "es" } }];
+}
+---
+
+<Layout
+  title={translations.home.title}
+  description={translations.home.description}
+>
+  <div></div>
+</Layout>

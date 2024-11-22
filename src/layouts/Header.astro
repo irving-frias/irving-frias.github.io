@@ -1,0 +1,120 @@
+---
+const lang = Astro.params.lang;
+const translations = await import(`../locales/${lang}.json`);
+const currentPath = Astro.url.pathname; // Get the current route
+---
+
+<header class="main-header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="/"> IFRIAS </a>
+
+      <button
+        class="navbar-toggler collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="navbar-collapse collapse"
+        id="navbarSupportedContent"
+        style=""
+      >
+        <ul class="menu-main navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class={`nav-link ${currentPath === `/${lang}` ? "active" : ""}`}
+              href={`/${lang}`}
+            >
+              {translations.navbar.home}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class={`nav-link ${
+                currentPath === `/${lang}/about` ? "active" : ""
+              }`}
+              href={`/${lang}/about`}
+            >
+              {translations.navbar.about}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class={`nav-link ${
+                currentPath === `/${lang}/contact` ? "active" : ""
+              }`}
+              href={`/${lang}/contact`}
+            >
+              {translations.navbar.contact}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class={`nav-link ${
+                currentPath === `/${lang}/posts` ? "active" : ""
+              }`}
+              href={`/${lang}/posts`}
+            >
+              {translations.navbar.posts}
+            </a>
+          </li>
+        </ul>
+
+        <div class="menu-language order-md-2">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                id="navbarLanguageDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                {lang.toUpperCase()}
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarLanguageDropdown"
+              >
+                <li>
+                  <a
+                    class={`dropdown-item ${lang === "en" ? "active" : ""}`}
+                    aria-current={lang === "en" ? "true" : "false"}
+                    href="/"
+                    title="IFRIAS"
+                    aria-label="IFRIAS"
+                  >
+                    English
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a
+                    class={`dropdown-item ${lang === "es" ? "active" : ""}`}
+                    rel="alternate"
+                    href="/es/"
+                    hreflang="es"
+                    lang="es"
+                    title="IFRIAS"
+                    aria-label="IFRIAS"
+                  >
+                    Español
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
