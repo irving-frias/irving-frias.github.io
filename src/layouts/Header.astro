@@ -7,7 +7,7 @@ const currentPath = Astro.url.pathname; // Get the current route
 <header class="main-header">
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="/"> IFRIAS </a>
+      <a class="navbar-brand" href=`/${lang}`> IFRIAS </a>
 
       <button
         class="navbar-toggler collapsed"
@@ -27,14 +27,6 @@ const currentPath = Astro.url.pathname; // Get the current route
         style=""
       >
         <ul class="menu-main navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a
-              class={`nav-link ${currentPath === `/${lang}` ? "active" : ""}`}
-              href={`/${lang}`}
-            >
-              {translations.navbar.home}
-            </a>
-          </li>
           <li class="nav-item">
             <a
               class={`nav-link ${
