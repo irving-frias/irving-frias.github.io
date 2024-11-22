@@ -160,8 +160,8 @@ const currentPath = Astro.url.pathname; // Get the current route
 <script>
   let toggler = document.querySelector('[name="theme-toggler"]');
 
-  toggler?.addEventListener("change", function (e) {
-    if (e?.target?.checked) {
+  toggler?.addEventListener("change", function (e: Event) {
+    if ((e?.target as HTMLInputElement)?.checked) {
       document.querySelector("html")?.setAttribute("data-bs-theme", "dark");
       localStorage.setItem("theme", "dark");
     } else {
