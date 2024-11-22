@@ -59,7 +59,7 @@ const currentPath = Astro.url.pathname; // Get the current route
           </li>
         </ul>
 
-        <div class="menu-language order-md-2">
+        <div class="menu-language">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
               <a
@@ -106,7 +106,67 @@ const currentPath = Astro.url.pathname; // Get the current route
             </li>
           </ul>
         </div>
+
+        <div class="theme-toggler">
+          <input type="checkbox" name="theme-toggler" />
+
+          <i
+            class="bi bi-brightness-low-fill"
+            style="font-size: 25px; color: black"></i>
+          <i class="bi bi-brightness-high-fill" style="font-size: 25px;"></i>
+        </div>
       </div>
     </div>
   </nav>
 </header>
+
+<style>
+  .theme-toggler {
+    position: relative;
+
+    & [name="theme-toggler"] {
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      cursor: pointer;
+    }
+
+    & .bi-brightness-low-fill {
+      display: inline-block;
+    }
+
+    & .bi-brightness-high-fill {
+      display: none;
+    }
+
+    &:has([name="theme-toggler"]:checked) {
+      & .bi-brightness-low-fill {
+        display: none;
+      }
+
+      & .bi-brightness-high-fill {
+        display: inline-block;
+      }
+    }
+  }
+</style>
+
+<script>
+  let toggler = document.querySelector('[name="theme-toggler"]');
+
+  toggler?.addEventListener("change", function (e) {
+    if (e?.target?.checked) {
+      document.querySelector("html")?.setAttribute("data-bs-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.querySelector("html")?.setAttribute("data-bs-theme", "light");
+      localStorage.setItem("theme", "light");
+    }
+  });
+</script>

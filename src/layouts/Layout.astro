@@ -13,7 +13,7 @@ const { lang } = Astro.params;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} data-bs-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -33,6 +33,24 @@ const { lang } = Astro.params;
     <script>
       // Astro will bundle and process this automatically
       import "bootstrap/dist/js/bootstrap.bundle.min.js";
+    </script>
+
+    <script>
+      // This will run on the client-side
+      window.addEventListener("DOMContentLoaded", () => {
+        // Check if there's any item stored in localStorage
+        const storedValue = localStorage.getItem("theme");
+        if (storedValue) {
+          document
+            .querySelector("html")
+            ?.setAttribute("data-bs-theme", storedValue);
+
+          storedValue === "dark" &&
+            document
+              .querySelector('[name="theme-toggler"]')
+              ?.setAttribute("checked", "checked");
+        }
+      });
     </script>
   </body>
 </html>
