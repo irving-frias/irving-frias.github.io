@@ -66,5 +66,8 @@
       "location": "Tepic, Nayarit, Mexico",
       "location_type": "On-site"
     }
-  ]
+  ],
+  "recent_posts": {
+    "title": "Recent Posts"
+  }
 }
