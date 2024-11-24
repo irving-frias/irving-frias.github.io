@@ -6,7 +6,7 @@ const currentPath = Astro.url.pathname; // Get the current route
 
 <header class="main-header">
   <nav class="navbar navbar-expand-lg">
-    <div class="container">
+    <div class="container-fluid">
       <a class="navbar-brand" href=`/${lang}`> IFRIAS </a>
 
       <button
@@ -30,11 +30,11 @@ const currentPath = Astro.url.pathname; // Get the current route
           <li class="nav-item">
             <a
               class={`nav-link ${
-                currentPath === `/${lang}/about` ? "active" : ""
+                currentPath === `/${lang}/posts` ? "active" : ""
               }`}
-              href={`/${lang}/about`}
+              href={`/${lang}/posts`}
             >
-              {translations.navbar.about}
+              {translations.navbar.posts}
             </a>
           </li>
           <li class="nav-item">
@@ -50,11 +50,11 @@ const currentPath = Astro.url.pathname; // Get the current route
           <li class="nav-item">
             <a
               class={`nav-link ${
-                currentPath === `/${lang}/posts` ? "active" : ""
+                currentPath === `/${lang}/about` ? "active" : ""
               }`}
-              href={`/${lang}/posts`}
+              href={`/${lang}/about`}
             >
-              {translations.navbar.posts}
+              {translations.navbar.about}
             </a>
           </li>
         </ul>
@@ -121,6 +121,47 @@ const currentPath = Astro.url.pathname; // Get the current route
 </header>
 
 <style>
+  header {
+    box-shadow:
+      0 1px 1px 0 rgba(0, 0, 0, 0.14),
+      0 2px 1px 0 rgba(0, 0, 0, 0.12),
+      0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    border-radius: 0 0 10px 10px;
+
+    & .navbar {
+      padding: 30px 0;
+
+      & .navbar-collapse {
+        & ul.menu-main {
+          & li {
+            & a {
+              font-size: 20px;
+            }
+          }
+        }
+
+        & .menu-language {
+          & ul {
+            & li {
+              & #navbarLanguageDropdown {
+                font-size: 20px;
+              }
+
+              & ul {
+                & li {
+                  & a {
+                    font-size: 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   .theme-toggler {
     position: relative;
 

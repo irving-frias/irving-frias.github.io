@@ -22,6 +22,17 @@ const { lang } = Astro.params;
     <meta name="generator" content={Astro.generator} />
     <meta name="description" property="og:description" content={description} />
     <title>{title} | IFRIAS</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    </style>
   </head>
   <body class="d-flex flex-column vh-100">
     <Header />
