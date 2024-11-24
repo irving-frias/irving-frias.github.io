@@ -30,7 +30,7 @@ export async function getStaticPaths() {
   <ul>
     {posts.map((post: any) => (
       <li id={post.data.slug}>
-        {post.data.title}
+        <a href={post.data.slug}>{post.data.title}</a>
       </li>
     ))}
   </ul>

@@ -37,5 +37,34 @@
       "url": "https://github.com/irving-frias",
       "icon": "bi-github"
     }
+  ],
+  "work_experience_block": {
+    "title": "Experiencia laboral"
+  },
+  "work_experience": [
+    {
+      "icon": "https://media.licdn.com/dms/image/v2/D4E0BAQEsPsKELSqTAw/company-logo_200_200/company-logo_200_200/0/1711920142568?e=1740614400&v=beta&t=Jx7MdJ2MnYGujTSBhYAytS_ZXUwxH7ixWz7TZZSE61s",
+      "position": "Arquitecto Drupal",
+      "employment_type": "Tiempo Completo",
+      "date_start": "Nov 2024",
+      "date_end": "Actual",
+      "organization": "Proceti",
+      "description": "Tecnologías y servicios de la información",
+      "url": "https://proceti.com.mx/",
+      "location": "Vista Hermosa, Monterrey Nuevo León, México",
+      "location_type": "Remoto"
+    },
+    {
+      "icon": "https://media.licdn.com/dms/image/v2/C560BAQG5IOK3JvM59w/company-logo_200_200/company-logo_200_200/0/1631419024250/d4all_logo?e=1740614400&v=beta&t=BbFY78jlhkUvNtGoZyNR9GJ_yWWwBfK4yACQXvsFwXE",
+      "position": "Desarrollador Drupal",
+      "employment_type": "Tiempo Completo",
+      "date_start": "Sep 2018",
+      "date_end": "Oct 2024",
+      "organization": "D4ALL",
+      "description": "",
+      "url": "https://www.d4all.mx/",
+      "location": "Tepic, Nayarit, Mexico",
+      "location_type": "En el sitio"
+    }
   ]
 }

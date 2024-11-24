@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Experience from "../../components/Experience.astro";
 const lang = Astro.params.lang;
 
 // Import translations based on the current language
@@ -13,4 +14,6 @@ export async function getStaticPaths() {
 <Layout
   title={translations.about.title}
   description={translations.about.description}
-/>
+>
+  <Experience lang={lang} />
+</Layout>

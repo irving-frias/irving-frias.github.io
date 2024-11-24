@@ -1,0 +1,93 @@
+---
+interface Props {
+  lang?: string | 'en';
+}
+
+const { lang = "en" } = Astro.props;
+
+// Import translations based on the current language
+const translations = await import(`../locales/${lang}.json`);
+---
+
+<section class="experience">
+  <div class="accordion container" id="accordion-experience">
+    <h2 class="experience-title">{translations.work_experience_block.title}</h2>
+
+    {
+      translations["work_experience"].map((work_experience: any, index: number) => (
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target=`#accordion-item-${index}` aria-expanded="false" aria-controls=`accordion-item-${index}`>
+              <img src={work_experience.icon} alt={work_experience.organization} width="50" height="50">
+              {work_experience.organization} ({work_experience.date_start} - {work_experience.date_end})
+            </button>
+          </h2>
+
+          <div id=`accordion-item-${index}` class="accordion-collapse collapse">
+            <div class="accordion-body d-flex flex-row">
+              <div class="content">
+                <h3>{work_experience.position}</h3>
+                <div class="company-and-type">
+                  <p><a href={work_experience.url} target="_blank">{work_experience.organization}</a> · {work_experience.employment_type}</p>
+                </div>
+
+                <div class="date-experience">
+                  <p>{work_experience.date_start} - {work_experience.date_end}</p>
+                </div>
+
+                <div class="location-and-type">
+                  <p>{work_experience.location} · {work_experience.location_type}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .experience {
+    padding: 40px 0;
+
+    & #accordion-experience{
+      & .experience-title{
+        margin: 0;
+      }
+
+      & .accordion-item{
+        & .accordion-header{
+          & .accordion-button{
+            & img{
+              margin-right: 15px;
+            }
+          }
+        }
+
+        & .accordion-collapse{
+          & .accordion-body{
+            & .content{
+              margin-left: 65px;
+
+              & .company-and-type{
+                & a{
+                  color: var(--bs-accordion-color);
+                  text-decoration: none;
+
+                  &:hover{
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      & .experience-title + .accordion-item{
+        margin-top: 20px;
+      }
+    }
+  }
+</style>
