@@ -212,6 +212,10 @@ const currentPath = Astro.url.pathname; // Get the current route
   window.addEventListener("DOMContentLoaded", () => {
     let toggler = document.querySelector('[name="theme-toggler"]');
     let menuLang = document.querySelectorAll('.menu-language .lang');
+    const storedTheme = localStorage.getItem("theme");
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    const currentTheme = storedTheme || systemTheme;
+    document.documentElement.setAttribute("data-bs-theme", currentTheme);
 
     toggler?.addEventListener("change", function (e: Event) {
       if ((e?.target as HTMLInputElement)?.checked) {
