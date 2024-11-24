@@ -37,6 +37,7 @@ const { lang } = Astro.params;
   <body class="d-flex flex-column vh-100">
     <Header />
     <main>
+      <h1 class="visually-hidden">{title}</h1>
       <slot />
     </main>
     <Footer />

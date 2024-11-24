@@ -7,7 +7,7 @@ const currentPath = Astro.url.pathname; // Get the current route
 <header class="main-header">
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href=`/${lang}`> IFRIAS </a>
+      <a class="navbar-brand" href=`/${lang}`> IFRIAS DEV </a>
 
       <button
         class="navbar-toggler collapsed"
@@ -77,9 +77,9 @@ const currentPath = Astro.url.pathname; // Get the current route
               >
                 <li>
                   <a
-                    class={`dropdown-item ${lang === "en" ? "active" : ""}`}
+                    class={`dropdown-item lang ${lang === "en" ? "active" : ""}`}
                     aria-current={lang === "en" ? "true" : "false"}
-                    href=`/en`
+                    href=`/en/`
                     title="IFRIAS"
                     aria-label="IFRIAS"
                   >
@@ -91,7 +91,7 @@ const currentPath = Astro.url.pathname; // Get the current route
                 </li>
                 <li>
                   <a
-                    class={`dropdown-item ${lang === "es" ? "active" : ""}`}
+                    class={`dropdown-item lang ${lang === "es" ? "active" : ""}`}
                     rel="alternate"
                     href="/es/"
                     hreflang="es"
@@ -209,15 +209,40 @@ const currentPath = Astro.url.pathname; // Get the current route
 </style>
 
 <script>
-  let toggler = document.querySelector('[name="theme-toggler"]');
+  window.addEventListener("DOMContentLoaded", () => {
+    let toggler = document.querySelector('[name="theme-toggler"]');
+    let menuLang = document.querySelectorAll('.menu-language .lang');
 
-  toggler?.addEventListener("change", function (e: Event) {
-    if ((e?.target as HTMLInputElement)?.checked) {
-      document.querySelector("html")?.setAttribute("data-bs-theme", "dark");
-      localStorage.setItem("theme", "dark");
+    toggler?.addEventListener("change", function (e: Event) {
+      if ((e?.target as HTMLInputElement)?.checked) {
+        document.querySelector("html")?.setAttribute("data-bs-theme", "dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.querySelector("html")?.setAttribute("data-bs-theme", "light");
+        localStorage.setItem("theme", "light");
+      }
+    });
+
+    // Current relative URL
+    let current_url = window.location.pathname;
+
+    // Validate if the URL matches `/posts/*`
+    if (/^\/posts\/.+/.test(current_url)) {
+      console.log("The current URL is in the /posts/ directory.");
     } else {
-      document.querySelector("html")?.setAttribute("data-bs-theme", "light");
-      localStorage.setItem("theme", "light");
+    // Loop through each language menu item
+    menuLang.forEach((langElement) => {
+      let href = langElement.getAttribute('href'); // Get current href
+      let updated_url = current_url;
+
+      if (href === "/es/") {
+        updated_url = current_url.replace(/^\/en\//, '/es/');
+      } else {
+        updated_url = current_url.replace(/^\/es\//, '/en/');
+      }
+
+      langElement.setAttribute('href', updated_url);
+    });
     }
   });
 </script>

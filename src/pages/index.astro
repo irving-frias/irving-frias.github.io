@@ -1,3 +1,10 @@
 ---
-return Astro.redirect("/en/");
+// Assuming you want to check the current route and ensure it's redirected to the right language
+const lang = Astro.params.lang;
+
+if (lang !== "en" && lang !== "es") {
+  // If the language is neither 'en' nor 'es', redirect to the default language
+  return Astro.redirect("/en/");
+}
+
 ---

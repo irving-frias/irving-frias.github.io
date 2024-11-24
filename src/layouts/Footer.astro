@@ -1,3 +1,10 @@
+---
+const lang = Astro.params.lang;
+
+// Import translations based on the current language
+const translations = await import(`../locales/${lang}.json`);
+---
+
 <div class="container-fluid mt-auto border-top">
   <footer
     class="d-flex flex-wrap justify-content-between align-items-center py-3"
@@ -9,30 +16,22 @@
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3">
-        <a
-          class="text-body-secondary"
-          rel="nofollow"
-          href="https://www.instagram.com/gio_frias330/"
-          target="_blank"><i class="bi bi-instagram"></i></a
-        >
-      </li>
-      <li class="ms-3">
-        <a
-          class="text-body-secondary"
-          rel="nofollow"
-          href="https://www.linkedin.com/in/irving-frias/"
-          target="_blank"><i class="bi bi-linkedin"></i></a
-        >
-      </li>
-      <li class="ms-3">
-        <a
-          class="text-body-secondary"
-          rel="nofollow"
-          href="https://github.com/irving-frias"
-          target="_blank"><i class="bi bi-github"></i></a
-        >
-      </li>
+      {
+        translations["social_media"].map((social: any) => (
+          <li class="ms-3">
+            <a
+              class="text-body-secondary"
+              rel="nofollow"
+              href={social.url}
+              target="_blank"
+              aria-label={social.title}
+              title={social.title}
+            >
+              <i class={social.icon} />
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </footer>
 </div>

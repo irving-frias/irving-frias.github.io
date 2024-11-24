@@ -20,5 +20,22 @@
   "posts": {
     "title": "Publicaciones",
     "description": "Listado de publicaciones."
-  }
+  },
+  "social_media": [
+    {
+      "title": "Ir a perfil de Instagram",
+      "url": "https://www.linkedin.com/in/irving-frias/",
+      "icon": "bi-instagram"
+    },
+    {
+      "title": "Ir a perfil de LinkedIn",
+      "url": "https://www.linkedin.com/in/irving-frias/",
+      "icon": "bi-linkedin"
+    },
+    {
+      "title": "Ir a perfil de Github",
+      "url": "https://github.com/irving-frias",
+      "icon": "bi-github"
+    }
+  ]
 }

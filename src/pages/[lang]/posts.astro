@@ -1,18 +1,37 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+
+// Get the current language from the route parameters
 const lang = Astro.params.lang;
 
-// Import translations based on the current language
+// Import translations dynamically based on the current language
 const translations = await import(`../../locales/${lang}.json`);
 
+// Fetch posts
+const posts = (await getCollection('posts'))
+  .filter(post => post.data.lang === lang)
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
+// Define static paths for internationalized routes
 export async function getStaticPaths() {
-  return [{ params: { lang: "en" } }, { params: { lang: "es" } }];
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "es" } },
+  ];
 }
 ---
 
+<!-- Render Layout with posts -->
 <Layout
   title={translations.posts.title}
   description={translations.posts.description}
 >
-  <h1>{translations.posts.title}</h1>
+  <ul>
+    {posts.map((post: any) => (
+      <li id={post.data.slug}>
+        {post.data.title}
+      </li>
+    ))}
+  </ul>
 </Layout>
