@@ -42,7 +42,7 @@ export async function getStaticPaths() {
           }
 
           return (
-            <div key={index} class={`post-item ${colClass} col-12`}>
+            <div class={`post-item ${colClass} col-12`}>
               <a class="post-item-wrapper" href={post.data.slug}>
                 <h3 class="title">{post.data.title}</h3>
                 <img src={post.data.img} alt={post.data.img_alt} />
