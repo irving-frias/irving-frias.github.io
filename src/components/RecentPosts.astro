@@ -123,6 +123,27 @@ export async function getStaticPaths() {
 
         & .post-list{
           width: calc(100% - 80px);
+
+          & .post-item {
+            filter: blur(3px);
+
+            &:hover{
+              filter: blur(0);
+
+              & .post-item-wrapper{
+                & .title{
+                  transform: scale(1);
+                }
+              }
+            }
+
+            & .post-item-wrapper{
+              & .title {
+                transform: scale(0.5);
+                transition: transform 0.2s ease-in-out;
+              }
+            }
+          }
         }
       }
     }
