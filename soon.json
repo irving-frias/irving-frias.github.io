@@ -1,0 +1,28 @@
+{
+  "soon": [
+    {
+      "icon": "https://media.licdn.com/dms/image/v2/D4E0BAQEsPsKELSqTAw/company-logo_200_200/company-logo_200_200/0/1711920142568?e=1740614400&v=beta&t=Jx7MdJ2MnYGujTSBhYAytS_ZXUwxH7ixWz7TZZSE61s",
+      "position": "Drupal Architect",
+      "employment_type": "Full-time",
+      "date_start": "Nov 2024",
+      "date_end": "Current",
+      "organization": "Proceti",
+      "description": "Information Technology & Services",
+      "url": "https://proceti.com/",
+      "location": "Vista Hermosa, Monterrey Nuevo León, México",
+      "location_type": "Remote"
+    },
+    {
+      "icon": "https://media.licdn.com/dms/image/v2/D4E0BAQEsPsKELSqTAw/company-logo_200_200/company-logo_200_200/0/1711920142568?e=1740614400&v=beta&t=Jx7MdJ2MnYGujTSBhYAytS_ZXUwxH7ixWz7TZZSE61s",
+      "position": "Arquitecto Drupal",
+      "employment_type": "Tiempo Completo",
+      "date_start": "Nov 2024",
+      "date_end": "Actual",
+      "organization": "Proceti",
+      "description": "Tecnologías y servicios de la información",
+      "url": "https://proceti.com.mx/",
+      "location": "Vista Hermosa, Monterrey Nuevo León, México",
+      "location_type": "Remoto"
+    }
+  ]
+}
