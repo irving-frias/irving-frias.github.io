@@ -1,0 +1,25 @@
+---
+import { type CollectionEntry } from "astro:content";
+// Define the Props interface to match the data structure
+interface Props {
+  title: string;
+  description: string;
+  img: string;
+  img_alt?: string;
+  publishDate: Date;
+}
+
+// Extract lang and slug from route params
+const { lang, slug } = Astro.params;
+const { entry } = Astro.props;
+---
+
+
+  <section class="hero-post">
+    <h1>{entry.data.title}</h1>
+    <p>{entry.data.description}</p>
+    <img src={entry.data.img} alt={entry.data.img_alt || entry.data.title} />
+    <time>
+      {entry.data.publishDate.toLocaleDateString(lang)}
+    </time>
+  </section>

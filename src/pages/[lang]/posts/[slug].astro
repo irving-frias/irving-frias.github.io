@@ -1,0 +1,53 @@
+---
+import { getCollection, type CollectionEntry, render } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import HeroPost from "../../../components/HeroPost.astro";
+
+// Define the type for `props` passed via getStaticPaths
+interface Props {
+  entry: CollectionEntry<"posts">;
+}
+
+// Generate paths for all posts
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+
+  return posts.map((entry) => {
+    const slug = entry.data.slug.replace(/^\/(en|es)\/posts\//, ''); // Remove '/en/posts/' or '/es/posts/'
+
+    return {
+      params: {
+        lang: entry.data.lang,
+        slug: slug, // Now it's just the post name (e.g., 'first-post')
+      },
+      props: { entry },
+    };
+  });
+}
+
+// Extract `lang` and `slug` from route params
+const { lang } = Astro.params;
+const { entry } = Astro.props;
+const body = entry.rendered?.html;
+
+
+---
+
+<Layout>
+  <article>
+    <HeroPost entry={entry} />
+
+    <section class="content" data-inner-html={body}>
+      
+    </section>
+  </article>
+</Layout>
+
+
+<script>
+  const contentElement = document.querySelector('.content');
+  if (contentElement) {
+    // Set the inner HTML to some content
+    contentElement.innerHTML = contentElement.getAttribute('data-inner-html');
+  }
+</script>
