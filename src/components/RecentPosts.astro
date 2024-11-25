@@ -117,12 +117,16 @@ export async function getStaticPaths() {
   @media screen and (min-width: 768px) {
     .recent-posts{
       & .posts{
+        & .heading{
+          width: 350px;
+        }
+
         & .heading + .post-list{
           margin-top: 0;
         }
 
         & .post-list{
-          width: calc(100% - 80px);
+          width: calc(100% - 350px);
 
           & .post-item {
             filter: blur(3px);
