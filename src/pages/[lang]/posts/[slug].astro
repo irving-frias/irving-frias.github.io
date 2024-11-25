@@ -1,5 +1,5 @@
 ---
-import { getCollection, type CollectionEntry, render } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
 import HeroPost from "../../../components/HeroPost.astro";
 
@@ -29,25 +29,31 @@ export async function getStaticPaths() {
 const { lang } = Astro.params;
 const { entry } = Astro.props;
 const body = entry.rendered?.html;
-
+const data = entry.data;
 
 ---
 
 <Layout>
   <article>
-    <HeroPost entry={entry} />
+    <HeroPost
+      title={data.title}
+      description={data.description}
+      img={data.img}
+      img_alt={data.img_alt}
+      publishDate={data.publishDate}
+    />
 
-    <section class="content" data-inner-html={body}>
-      
-    </section>
+    <section class="content" data-inner-html={body}></section>
   </article>
 </Layout>
 
 
 <script>
   const contentElement = document.querySelector('.content');
+  const innerHTML = document.querySelector('.content')?.getAttribute('data-inner-html') ?? "";
+
   if (contentElement) {
     // Set the inner HTML to some content
-    contentElement.innerHTML = contentElement.getAttribute('data-inner-html');
+    contentElement.innerHTML = innerHTML;
   }
 </script>
