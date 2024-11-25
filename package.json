@@ -11,21 +11,25 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/node": "^8.3.4",
     "@astrojs/react": "^3.6.3",
     "@astrojs/sitemap": "^3.2.1",
     "@popperjs/core": "^2.11.8",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "astro": "^5.0.0-beta.10",
+    "astro": "^4.16.14",
     "astro-bootstrap": "^0.7.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sass": "^1.81.0",
     "typescript": "^5.6.3"
   },
   "devDependencies": {
-    "@types/bootstrap": "^5.2.10"
+    "@types/bootstrap": "^5.2.10",
+    "sass": "^1.81.0",
+    "stylelint": "^16.10.0",
+    "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-config-standard": "^36.0.1"
   }
 }

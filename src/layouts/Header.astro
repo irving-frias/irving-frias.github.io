@@ -211,9 +211,12 @@ const currentPath = Astro.url.pathname; // Get the current route
 <script>
   window.addEventListener("DOMContentLoaded", () => {
     let toggler = document.querySelector('[name="theme-toggler"]');
-    let menuLang = document.querySelectorAll('.menu-language .lang');
+    let menuLang = document.querySelectorAll(".menu-language .lang");
     const storedTheme = localStorage.getItem("theme");
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light";
     const currentTheme = storedTheme || systemTheme;
     document.documentElement.setAttribute("data-bs-theme", currentTheme);
 
@@ -234,19 +237,24 @@ const currentPath = Astro.url.pathname; // Get the current route
     if (/^\/posts\/.+/.test(current_url)) {
       console.log("The current URL is in the /posts/ directory.");
     } else {
-    // Loop through each language menu item
-    menuLang.forEach((langElement) => {
-      let href = langElement.getAttribute('href'); // Get current href
-      let updated_url = current_url;
+      // Loop through each language menu item
+      menuLang.forEach((langElement) => {
+        let href = langElement.getAttribute("href"); // Get current href
+        let updated_url = current_url;
+        let regex = /^\/(es|en)$/;
 
-      if (href === "/es/") {
-        updated_url = current_url.replace(/^\/en\//, '/es/');
-      } else {
-        updated_url = current_url.replace(/^\/es\//, '/en/');
-      }
+        console.log(regex.test(updated_url), updated_url);
 
-      langElement.setAttribute('href', updated_url);
-    });
+        if (!regex.test(updated_url)) {
+          if (href === "/es/") {
+            updated_url = current_url.replace(/^\/en\//, "/es/");
+          } else {
+            updated_url = current_url.replace(/^\/es\//, "/en/");
+          }
+
+          langElement.setAttribute("href", updated_url);
+        }
+      });
     }
   });
 </script>

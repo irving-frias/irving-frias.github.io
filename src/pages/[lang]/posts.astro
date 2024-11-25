@@ -9,16 +9,13 @@ const lang = Astro.params.lang;
 const translations = await import(`../../locales/${lang}.json`);
 
 // Fetch posts
-const posts = (await getCollection('posts'))
-  .filter(post => post.data.lang === lang)
+const posts = (await getCollection("posts"))
+  .filter((post) => post.data.lang === lang)
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
 // Define static paths for internationalized routes
 export async function getStaticPaths() {
-  return [
-    { params: { lang: "en" } },
-    { params: { lang: "es" } },
-  ];
+  return [{ params: { lang: "en" } }, { params: { lang: "es" } }];
 }
 ---
 
@@ -28,10 +25,12 @@ export async function getStaticPaths() {
   description={translations.posts.description}
 >
   <ul>
-    {posts.map((post: any) => (
-      <li id={post.data.slug}>
-        <a href={post.data.slug}>{post.data.title}</a>
-      </li>
-    ))}
+    {
+      posts.map((post: any) => (
+        <li id={post.data.slug}>
+          <a href={post.data.slug}>{post.data.title}</a>
+        </li>
+      ))
+    }
   </ul>
 </Layout>
