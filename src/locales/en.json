@@ -68,6 +68,7 @@
     }
   ],
   "recent_posts": {
-    "title": "Recent Posts"
+    "title": "Recent Posts",
+    "read_more": "Read More"
   }
 }

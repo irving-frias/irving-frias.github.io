@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   const posts = await getCollection("posts");
 
   return posts.map((entry) => {
-    const slug = entry.data.slug.replace(/^\/(en|es)\/posts\//, ''); // Remove '/en/posts/' or '/es/posts/'
+    const slug = entry.data.slug.replace(/^\/(en|es)\/posts\//, ""); // Remove '/en/posts/' or '/es/posts/'
 
     return {
       params: {
@@ -28,9 +28,8 @@ export async function getStaticPaths() {
 // Extract `lang` and `slug` from route params
 const { lang } = Astro.params;
 const { entry } = Astro.props;
-const body = entry.rendered?.html;
+const { Content } = await entry.render();
 const data = entry.data;
-
 ---
 
 <Layout>
@@ -43,17 +42,8 @@ const data = entry.data;
       publishDate={data.publishDate}
     />
 
-    <section class="content" data-inner-html={body}></section>
+    <section class="content">
+      <Content />
+    </section>
   </article>
 </Layout>
-
-
-<script>
-  const contentElement = document.querySelector('.content');
-  const innerHTML = document.querySelector('.content')?.getAttribute('data-inner-html') ?? "";
-
-  if (contentElement) {
-    // Set the inner HTML to some content
-    contentElement.innerHTML = innerHTML;
-  }
-</script>
