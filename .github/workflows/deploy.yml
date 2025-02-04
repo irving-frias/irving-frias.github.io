@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: 🔨 Run Laravel Mix
-        run: npx mix
+        run: npx mix --production
 
       - name: 🚀 Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
