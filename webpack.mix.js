@@ -74,7 +74,11 @@ minifyHtml().then(() => {
 });
 
 // Copiar la carpeta `assets/`
-mix.copyDirectory('assets', 'dist/assets');
+const files = glob.sync('assets/**');
+if (files.length) {
+    mix.copyDirectory('assets', 'dist/assets');
+}
+
 
 // Habilitar cache busting solo en producción
 if (mix.inProduction()) {
