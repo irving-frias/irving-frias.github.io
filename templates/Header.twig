@@ -6,12 +6,16 @@
     <div class="container d-flex justify-between align-center">
       <a href="{{ url }}" data-alternate="{{ alternate_url }}" class="navbar h1">Irving Frias</a>
 
-      <div class="header-menu">
-        <ul class="header-menu-wrapper d-flex flex-col flex-lg-row list-style-none container h-100">
+      <div class="header-menu d-lg-flex">
+        <ul class="header-menu-wrapper d-flex flex-col flex-lg-row list-style-none container">
           {% for link in urls %}
           <li><a class="h3" href="{{ link.url }}" data-alternate="{{ link.alternate_url }}">{{ link.name }}</a></li>
           {% endfor %}
         </ul>
+
+        <div class="lang-toggle container">
+          <a href="{{ alternate_url }}"></a>
+        </div>
       </div>
 
       <div class="toggler d-lg-none">

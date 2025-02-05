@@ -29,6 +29,32 @@ header {
           }
         }
       }
+
+      .lang-toggle {
+        a {
+          position: relative;
+          width: 40px;
+          height: 40px;
+          display: block;
+
+          &:hover {
+            &:after {
+              background: $blue-hover;
+            }
+          }
+
+          &:after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 40px;
+            mask-size: 40px 40px;
+            mask-position: center;
+            mask-repeat: no-repeat;
+            mask-image: url(/assets/icons/translate.svg);
+          }
+        }
+      }
     }
   }
 }
@@ -38,13 +64,23 @@ header {
   header {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 
-    .header-menu {
-      background: white !important;
-    }
+    nav {
+      .header-menu {
+        background: white !important;
 
-    .toggler {
-      &:after {
-        background: $dark !important;
+        .lang-toggle {
+          a {
+            &:after {
+              background: $dark;
+            }
+          }
+        }
+      }
+
+      .toggler {
+        &:after {
+          background: $dark !important;
+        }
       }
     }
   }
@@ -55,13 +91,23 @@ header {
   header {
     box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.14), 0 2px 1px 0 rgba(255, 255, 255, 0.12), 0 1px 3px 0 rgba(255, 255, 255, 0.2);
 
-    .header-menu {
-      background: $dark !important;
-    }
+    nav {
+      .header-menu {
+        background: $dark !important;
 
-    .toggler {
-      &:after {
-        background: white !important;
+        .lang-toggle {
+          a {
+            &:after {
+              background: white;
+            }
+          }
+        }
+      }
+
+      .toggler {
+        &:after {
+          background: white !important;
+        }
       }
     }
   }
@@ -212,6 +258,14 @@ header {
         .header-menu-wrapper {
           gap: 24px;
           margin: 0;
+        }
+
+        .lang-toggle {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
     }
