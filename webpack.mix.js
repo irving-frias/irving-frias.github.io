@@ -18,7 +18,7 @@ function compileJS() {
     ];
 
     // Compile the JS files in the specified order
-    mix.scripts(jsFiles, 'dist/js/app.js');
+    mix.js(jsFiles, 'dist/js/app.js').minify('dist/js/app.js');
 
     console.log('✔ JS compilado');
 }
