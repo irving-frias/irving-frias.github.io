@@ -1,3 +1,8 @@
+{% set urls = [
+{ 'name': 'Projects', 'url': '/projects' },
+{ 'name': 'Contact', 'url': '/contact' }
+] %}
+
 <header>
   <nav>
     <div class="container d-flex justify-between align-center">
@@ -5,8 +10,9 @@
 
       <div class="header-menu">
         <ul class="header-menu-wrapper d-flex flex-col flex-lg-row list-style-none container h-100">
-          <li><a class="h3" href="/projects">Projects</a></li>
-          <li><a class="h3" href="/contact">Contact</a></li>
+          {% for link in urls %}
+          <li><a class="h3" href="{{ link.url }}">{{ link.name }}</a></li>
+          {% endfor %}
         </ul>
       </div>
 

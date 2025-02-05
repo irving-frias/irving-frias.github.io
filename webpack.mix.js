@@ -33,22 +33,36 @@ function cleanDist() {
 
 // 📝 **Compilar archivos Twig**
 function compileTwig() {
-    const files = glob.sync('pages/*.twig');
+    const files = glob.sync('pages/**/*.twig'); // Ensure we capture all twig files, including those in subfolders
 
     files.forEach((file) => {
         const fileContent = fs_extra.readFileSync(file, 'utf8');
         const parsed = matter(fileContent);
         const data = parsed.data;
 
+        // Define output path based on file structure
+        let outputPath = file.replace('pages/', 'dist/');
+
+        // Check if the file is in the 'es' folder and create the folder if necessary
+        if (file.includes('/es/')) {
+            const langFolder = 'es'; // Language folder name
+            const fileName = file.replace('pages/es/', '').replace('.twig', '.html');
+            outputPath = `dist/${langFolder}/${fileName}`;
+        } else {
+            outputPath = outputPath.replace('.twig', '.html');
+        }
+
+        // Ensure the directory exists before writing
+        fs_extra.ensureDirSync(outputPath.substring(0, outputPath.lastIndexOf('/')));
+        
+        // Render the Twig file to HTML and write it to the output
         twig.renderFile(file, data, (err, html) => {
             if (err) {
-                console.error(`❌ Error compilando ${file}:`, err);
+                console.error(`❌ Error compiling ${file}:`, err);
                 return;
             }
-            const outputPath = file.replace('pages/', 'dist/').replace('.twig', '.html');
-            fs_extra.ensureDirSync('dist');
             fs_extra.writeFileSync(outputPath, html, 'utf8');
-            console.log(`✔ Renderizado: ${outputPath}`);
+            console.log(`✔ Rendered: ${outputPath}`);
         });
     });
 }
