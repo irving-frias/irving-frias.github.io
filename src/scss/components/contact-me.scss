@@ -67,7 +67,25 @@
 
 /* Light theme styles */
 @media (prefers-color-scheme: light) {
-  #contact-me {}
+  #contact-me {
+    .contact-body {
+      .social-icons {
+        li {
+          a {
+            &::after {
+              background: #005FCC;
+            }
+
+            &:hover {
+              &:after {
+                background: #0047A5;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 /* Dark theme styles */
@@ -94,7 +112,13 @@
         li {
           a {
             &::after {
-              background: $dark;
+              background: #4A9DFF;
+            }
+
+            &:hover {
+              &:after {
+                background: #1E7BEF;
+              }
             }
           }
         }
