@@ -11,9 +11,18 @@ let compileTimeout;
 
 // 🚀 **Compilar JavaScript**
 function compileJS() {
-    mix.scripts(['src/js/main.js'], 'dist/js/app.js');
+    // Array of JavaScript files in the order you want them to be compiled
+    const jsFiles = [
+        'src/js/transform-urls.js',
+        'src/js/main.js', // Ensure the main.js is last if it's the entry point
+    ];
+
+    // Compile the JS files in the specified order
+    mix.scripts(jsFiles, 'dist/js/app.js');
+
     console.log('✔ JS compilado');
 }
+
 
 // 🚀 **Compilar SCSS**
 function compileSCSS() {
