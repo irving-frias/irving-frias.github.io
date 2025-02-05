@@ -31,6 +31,12 @@ header {
 @media (prefers-color-scheme: light) {
   header {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+
+    .toggler {
+      &:after {
+        background: black !important;
+      }
+    }
   }
 }
 
@@ -38,6 +44,12 @@ header {
 @media (prefers-color-scheme: dark) {
   header {
     box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.14), 0 2px 1px 0 rgba(255, 255, 255, 0.12), 0 1px 3px 0 rgba(255, 255, 255, 0.2);
+
+    .toggler {
+      &:after {
+        background: white !important;
+      }
+    }
   }
 }
 
@@ -97,7 +109,6 @@ header {
         left: 0;
         right: 0;
         height: calc(100vh - 60px);
-        background: white;
         opacity: 0;
         visibility: hidden;
       }
