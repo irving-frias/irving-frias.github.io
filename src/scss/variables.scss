@@ -7,8 +7,12 @@ $text-color: $dark;
   $text-color: $dark;
 
   body {
-    background-color: $dark;
-    color: $light;
+    background-color: $light;
+    color: $dark;
+
+    * {
+      color: $dark;
+    }
   }
 }
 
@@ -17,7 +21,11 @@ $text-color: $dark;
   $text-color: $light;
 
   body {
-    background-color: $light;
-    color: $dark;
+    background-color: $dark;
+    color: $light;
+
+    * {
+      color: $light;
+    }
   }
 }

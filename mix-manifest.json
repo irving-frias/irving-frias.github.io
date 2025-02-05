@@ -1,5 +1,7 @@
 {
     "/dist/css/main.css": "/dist/css/main.css",
     "/dist/js/app.js": "/dist/js/app.js",
-    "/dist/assets/BebasNeue-Regular.ttf": "/dist/assets/BebasNeue-Regular.ttf"
+    "/dist/assets/BebasNeue-Regular.ttf": "/dist/assets/BebasNeue-Regular.ttf",
+    "/dist/assets/icons/menu-close.svg": "/dist/assets/icons/menu-close.svg",
+    "/dist/assets/icons/menu-opener.svg": "/dist/assets/icons/menu-opener.svg"
 }
