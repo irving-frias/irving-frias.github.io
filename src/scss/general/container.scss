@@ -1,0 +1,32 @@
+.container {
+  max-width: 560px;
+  padding: 15px;
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 560px;
+    padding: 15px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: none;
+    padding: 30px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .container {
+    max-width: 1440px;
+  }
+}

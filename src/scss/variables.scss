@@ -1,0 +1,23 @@
+$dark: #212121;
+$light: #FFF;
+$text-color: $dark;
+
+/* Light theme styles */
+@media (prefers-color-scheme: light) {
+  $text-color: $dark;
+
+  body {
+    background-color: $dark;
+    color: $light;
+  }
+}
+
+/* Dark theme styles */
+@media (prefers-color-scheme: dark) {
+  $text-color: $light;
+
+  body {
+    background-color: $light;
+    color: $dark;
+  }
+}

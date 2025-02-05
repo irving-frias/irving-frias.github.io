@@ -5,52 +5,62 @@ const fs = require('fs');
 const fs_extra = require('fs-extra');
 const twig = require('twig');
 const matter = require('gray-matter');
+const chokidar = require('chokidar');
 
-// Define JavaScript files in order
-const jsFiles = [
-  'src/js/main.js'
-];
+let compileTimeout;
 
-// Merge JavaScript files in order
-mix.scripts(jsFiles, 'dist/js/app.js');
-
-// Function to render Twig files
-function compileTwig() {
-  const files = glob.sync('pages/*.twig');
-
-  files.forEach(file => {
-      const fileContent = fs_extra.readFileSync(file, 'utf8');
-      const parsed = matter(fileContent); // Extract YAML front matter
-      const templateData = parsed.content; // The Twig content
-      const data = parsed.data; // Variables from front matter
-
-      twig.renderFile(file, data, (err, html) => {
-          if (err) {
-              console.error(`❌ Error rendering ${file}:`, err);
-              return;
-          }
-          const outputPath = file.replace('pages/', 'dist/').replace('.twig', '.html');
-          fs_extra.ensureDirSync('dist'); // Ensure output folder exists
-          fs_extra.writeFileSync(outputPath, html, 'utf8');
-          console.log(`✔ Rendered ${outputPath}`);
-      });
-  });
+// 🚀 **Compilar JavaScript**
+function compileJS() {
+    mix.scripts(['src/js/main.js'], 'dist/js/app.js');
+    console.log('✔ JS compilado');
 }
 
-// Procesar SCSS con minificación
-mix.sass('src/scss/main.scss', 'dist/css')
-   .options({
-       postCss: [require('autoprefixer'), require('cssnano')({ preset: 'default' })],
-   });
+// 🚀 **Compilar SCSS**
+function compileSCSS() {
+    mix.sass('src/scss/main.scss', 'dist/css').options({
+        postCss: [require('autoprefixer'), require('cssnano')({ preset: 'default' })],
+    });
+    console.log('✔ SCSS compilado');
+}
 
-// Función para minificar HTML
+// 🧹 **Limpiar la carpeta `dist/` antes de compilar**
+function cleanDist() {
+    if (fs.existsSync('dist')) {
+        fs_extra.emptyDirSync('dist');
+        console.log('🧹 Limpieza completa en /dist/');
+    }
+}
+
+// 📝 **Compilar archivos Twig**
+function compileTwig() {
+    const files = glob.sync('pages/*.twig');
+
+    files.forEach((file) => {
+        const fileContent = fs_extra.readFileSync(file, 'utf8');
+        const parsed = matter(fileContent);
+        const data = parsed.data;
+
+        twig.renderFile(file, data, (err, html) => {
+            if (err) {
+                console.error(`❌ Error compilando ${file}:`, err);
+                return;
+            }
+            const outputPath = file.replace('pages/', 'dist/').replace('.twig', '.html');
+            fs_extra.ensureDirSync('dist');
+            fs_extra.writeFileSync(outputPath, html, 'utf8');
+            console.log(`✔ Renderizado: ${outputPath}`);
+        });
+    });
+}
+
+// ⚡ **Minificar archivos HTML**
 async function minifyHtml() {
-    const files = glob.sync('*.html');
+    const files = glob.sync('dist/*.html');
 
     for (const file of files) {
-        let content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'utf8');
 
-        let minified = await htmlMinifier.minify(content, {
+        const minified = await htmlMinifier.minify(content, {
             collapseWhitespace: true,
             removeComments: true,
             removeRedundantAttributes: true,
@@ -59,22 +69,45 @@ async function minifyHtml() {
             minifyCSS: true,
         });
 
-        fs.writeFileSync(`dist/${file}`, minified, 'utf8');
+        fs.writeFileSync(file, minified, 'utf8');
+    }
+
+    console.log('✔ Minificación de HTML completada');
+}
+
+// 📂 **Copiar la carpeta de assets si existe**
+function copyAssets() {
+    if (fs.existsSync('assets')) {
+        mix.copyDirectory('assets', 'dist/assets');
+        console.log('✔ Archivos de assets copiados');
     }
 }
 
-// Render Twig templates
-compileTwig();
+// 👀 **Watcher para detectar cambios y recompilar automáticamente**
+function watchFiles() {
+    chokidar.watch(['templates/**/*.twig', 'pages/*.twig', 'src/js/**/*.js', 'src/scss/**/*.scss'])
+        .on('all', (event, path) => {
+            console.log(`🔄 ${event.toUpperCase()}: ${path}`);
 
-// Ejecutar la minificación antes de que termine la compilación
-minifyHtml().then(() => {
-    console.log('✔ HTML minificado correctamente');
-}).catch(err => {
-    console.error('Error al minificar HTML:', err);
-});
-
-// Copiar la carpeta `assets/`
-const files = glob.sync('assets/**');
-if (files.length) {
-    mix.copyDirectory('assets', 'dist/assets');
+            clearTimeout(compileTimeout);
+            compileTimeout = setTimeout(async () => {
+                console.log('🔄 Cambios detectados, recompilando...');
+                cleanDist();
+                compileJS();
+                compileSCSS();
+                compileTwig();
+                await minifyHtml();
+                copyAssets();
+            }, 300); // Debounce de 300ms
+        });
 }
+
+// 🏁 **Ejecución inicial**
+(async () => {
+    cleanDist();
+    compileJS();
+    compileSCSS();
+    compileTwig();
+    await minifyHtml();
+    copyAssets();
+})();
