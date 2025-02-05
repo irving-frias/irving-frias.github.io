@@ -2,11 +2,11 @@ header {
   position: sticky;
   top: 0;
   background-color: transparent;
-  height: 70px;
+  height: 76px;
 
   nav {
     .navbar {
-      font-size: 22px;
+      font-size: 38px;
       text-decoration: none;
       font-weight: 700;
       text-transform: uppercase;
@@ -17,7 +17,7 @@ header {
 
       li {
         a {
-          font-size: 14px;
+          font-size: 38px;
           text-decoration: none;
           font-weight: 700;
           text-transform: uppercase;
@@ -32,6 +32,10 @@ header {
   header {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 
+    .header-menu {
+      background: black !important;
+    }
+
     .toggler {
       &:after {
         background: black !important;
@@ -44,6 +48,10 @@ header {
 @media (prefers-color-scheme: dark) {
   header {
     box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.14), 0 2px 1px 0 rgba(255, 255, 255, 0.12), 0 1px 3px 0 rgba(255, 255, 255, 0.2);
+
+    .header-menu {
+      background: white !important;
+    }
 
     .toggler {
       &:after {
@@ -105,7 +113,7 @@ header {
     nav {
       .header-menu {
         position: fixed;
-        top: 72px;
+        top: 78px;
         left: 0;
         right: 0;
         height: calc(100vh - 60px);
@@ -180,18 +188,8 @@ header {
 @media screen and (min-width: 768px) {
   header {
     nav {
-      .navbar {
-        font-size: 28px;
-      }
-
       .header-menu {
         gap: 16px;
-
-        li {
-          a {
-            font-size: 16px;
-          }
-        }
       }
     }
   }
@@ -203,7 +201,7 @@ header {
 
     nav {
       .navbar {
-        font-size: 32px;
+        font-size: 40px;
       }
 
       .header-menu {
@@ -212,7 +210,7 @@ header {
 
         li {
           a {
-            font-size: 24px;
+            font-size: 30px;
           }
         }
       }
