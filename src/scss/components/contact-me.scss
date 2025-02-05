@@ -1,0 +1,116 @@
+#contact-me {
+  &[open] {
+    .contact-body {
+      .social-icons {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        gap: 30px;
+
+
+        li {
+          a {
+            width: 40px;
+            height: 40px;
+            display: block;
+            position: relative;
+
+            &:after {
+              content: '';
+              display: block;
+              width: 40px;
+              height: 40px;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              mask-size: 40px 40px;
+              mask-position: center;
+              mask-repeat: no-repeat;
+            }
+
+            &.mail {
+              &:after {
+                mask-image: url(/assets/icons/mail.svg);
+              }
+            }
+
+            &.linkedin {
+              &:after {
+                mask-image: url(/assets/icons/linkedin.svg);
+              }
+            }
+
+            &.phone {
+              &:after {
+                mask-image: url(/assets/icons/phone.svg);
+              }
+            }
+          }
+
+          &:nth-child(1) a {
+            animation: wave 1.2s ease-in-out;
+          }
+
+          &:nth-child(2) a {
+            animation: wave 1.2s ease-in-out 0.2s;
+          }
+
+          &:nth-child(3) a {
+            animation: wave 1.2s ease-in-out 0.4s;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Light theme styles */
+@media (prefers-color-scheme: light) {
+  #contact-me {}
+}
+
+/* Dark theme styles */
+@media (prefers-color-scheme: dark) {
+  #contact-me {
+    color: $dark;
+
+    .contact-header {
+      .close-btn {
+        background-color: $light;
+        color: $dark;
+        cursor: pointer;
+      }
+    }
+
+    .contact-body {
+      .info {
+        h2 {
+          color: $dark;
+        }
+      }
+
+      .social-icons {
+        li {
+          a {
+            &::after {
+              background: $dark;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes wave {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}

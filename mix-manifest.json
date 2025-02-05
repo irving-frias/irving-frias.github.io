@@ -2,7 +2,10 @@
     "/dist/css/main.css": "/dist/css/main.css",
     "/dist/js/app.js": "/dist/js/app.js",
     "/dist/assets/BebasNeue-Regular.ttf": "/dist/assets/BebasNeue-Regular.ttf",
+    "/dist/assets/icons/linkedin.svg": "/dist/assets/icons/linkedin.svg",
+    "/dist/assets/icons/mail.svg": "/dist/assets/icons/mail.svg",
     "/dist/assets/icons/menu-close.svg": "/dist/assets/icons/menu-close.svg",
     "/dist/assets/icons/menu-opener.svg": "/dist/assets/icons/menu-opener.svg",
-    "/dist/assets/icons/mexico.svg": "/dist/assets/icons/mexico.svg"
+    "/dist/assets/icons/mexico.svg": "/dist/assets/icons/mexico.svg",
+    "/dist/assets/icons/phone.svg": "/dist/assets/icons/phone.svg"
 }
