@@ -1,0 +1,92 @@
+.hero {
+  .hero-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    text-align: left;
+
+    .hero-image {
+      position: relative;
+      width: 220px;
+      height: 220px;
+
+      img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        border: 4px solid $blue;
+        box-shadow: 0 0 10px $blue;
+        animation: heartbeat 4s ease-in-out infinite;
+
+        &:hover {
+          animation-play-state: paused;
+        }
+      }
+    }
+
+    .hero-text {
+      h1 {
+        font-size: 2rem;
+        margin: 0;
+      }
+
+      .highlight {
+        color: $blue;
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin: 10px 0;
+      }
+
+      .info {
+        list-style: none;
+        padding: 0;
+
+        li {
+          font-size: 0.9rem;
+          margin: 5px 0;
+
+          &.location {
+            position: relative;
+
+            #mexico-logo {
+              width: 12px;
+              height: 12px;
+            }
+          }
+        }
+      }
+
+      .contact-me {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        background: $blue;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          background: $blue-hover;
+        }
+      }
+    }
+  }
+}
+
+@keyframes heartbeat {
+
+  0%,
+  100% {
+    transform: scale(.8);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
