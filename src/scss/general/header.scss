@@ -13,7 +13,7 @@ header {
     }
 
     .header-menu {
-      gap: 8px;
+      gap: 20px;
 
       li {
         a {
@@ -38,7 +38,7 @@ header {
 
     .toggler {
       &:after {
-        background: black !important;
+        background: $dark !important;
       }
     }
   }
@@ -50,7 +50,7 @@ header {
     box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.14), 0 2px 1px 0 rgba(255, 255, 255, 0.12), 0 1px 3px 0 rgba(255, 255, 255, 0.2);
 
     .header-menu {
-      background: black !important;
+      background: $dark !important;
     }
 
     .toggler {

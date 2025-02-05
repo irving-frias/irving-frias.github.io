@@ -1,10 +1,12 @@
-$dark: #212121;
+$dark: #202931;
 $light: #FFF;
 $text-color: $dark;
+$orange: #fe5b45;
 
 /* Light theme styles */
 @media (prefers-color-scheme: light) {
   $text-color: $dark;
+  $orange: #ee5927;
 
   body {
     background-color: $light;
@@ -19,6 +21,7 @@ $text-color: $dark;
 /* Dark theme styles */
 @media (prefers-color-scheme: dark) {
   $text-color: $light;
+  $orange: #fe5b45;
 
   body {
     background-color: $dark;
