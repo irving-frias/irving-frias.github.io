@@ -1,17 +1,26 @@
 {% set site_name = "Home" %}
+{% set lang = "en" %}
+{% set urls = [
+{ 'name': 'Projects', 'url': '/projects', 'alternate_url': '/es/proyectos' },
+{ 'name': 'Contact', 'url': '/contact', 'alternate_url': '/es/contacto' }
+] %}
 {% extends "../templates/Layout.twig" %}
 
 {% block content %}
 {% include "../templates/Hero.twig" with {
-  image: 'https://avatars.githubusercontent.com/u/45571323?s=400&u=ccddf181190660d698e4c66d8e5c10648b453ca1&v=4',
-  image_at: 'Web Developer',
-  pre_text: "Hi, I'm",
-  position: 'Web Developer',
-  name: 'Irving Frias',
-  text: 'Passionate Web Developer crafting modern & scalable applications.',
-  location: 'Nayarit, Mexico.',
-  birthdate: '25 Feb 2001.'
+image: 'https://avatars.githubusercontent.com/u/45571323?s=400&u=ccddf181190660d698e4c66d8e5c10648b453ca1&v=4',
+image_at: 'Web Developer',
+pre_text: "Hi, I'm",
+position: 'Web Developer',
+name: 'Irving Frias',
+text: 'Passionate Web Developer crafting modern & scalable applications.',
+location: 'Nayarit, Mexico.',
+birthdate: 'Feb 25 2001.',
+cta_text: 'Contact me'
 } %}
 
-{% include "../templates/ContactDialog.twig" %}
+{% include "../templates/ContactDialog.twig" with {
+heading: 'Contact me on the following social networks',
+close_text: 'Close'
+} %}
 {% endblock %}

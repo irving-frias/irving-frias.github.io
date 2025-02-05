@@ -1,17 +1,15 @@
-{% set urls = [
-{ 'name': 'Projects', 'url': '/projects' },
-{ 'name': 'Contact', 'url': '/contact' }
-] %}
+{% set url = lang == 'es' ? '/es' : '/' %}
+{% set alternate_url = url == '/es' ? '/' : '/es' %}
 
 <header>
   <nav>
     <div class="container d-flex justify-between align-center">
-      <a href="/" class="navbar h1">Irving Frias</a>
+      <a href="{{ url }}" data-alternate="{{ alternate_url }}" class="navbar h1">Irving Frias</a>
 
       <div class="header-menu">
         <ul class="header-menu-wrapper d-flex flex-col flex-lg-row list-style-none container h-100">
           {% for link in urls %}
-          <li><a class="h3" href="{{ link.url }}">{{ link.name }}</a></li>
+          <li><a class="h3" href="{{ link.url }}" data-alternate="{{ link.alternate_url }}">{{ link.name }}</a></li>
           {% endfor %}
         </ul>
       </div>

@@ -7,7 +7,7 @@
 
     <!-- Right Side - Text -->
     <div class="hero-text">
-      <h1>{{ pre_text }} {{ name }}, <br> {{ position }}</h1>
+      <h2 class="h1">{{ pre_text }} {{ name }}, <br> {{ position }}</h2>
       <p>{{ text }}</p>
       <ul class="info">
         <li class="location"><strong>Location:</strong>
@@ -67,7 +67,7 @@
         </li>
         <li class="born"><strong>Born:</strong> {{ birthdate }}</li>
       </ul>
-      <button class="contact-me" onclick="document.getElementById('contact-me').showModal()">Contact Me</button>
+      <button class="contact-me" onclick="document.getElementById('contact-me').showModal()">{{ cta_text }}</button>
     </div>
   </div>
 </section>

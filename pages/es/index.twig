@@ -1,4 +1,9 @@
-{% set site_name = "Home" %}
+{% set site_name = "Inicio" %}
+{% set lang = "es" %}
+{% set urls = [
+{ 'name': 'Proyectos', 'url': '/es/proyectos', 'alternate_url': '/projects' },
+{ 'name': 'Contacto', 'url': '/es/contacto', 'alternate_url': '/contact' }
+] %}
 {% extends "../../templates/Layout.twig" %}
 
 {% block content %}
@@ -8,10 +13,14 @@ image_at: 'Web Developer',
 pre_text: "Hola, Soy",
 position: 'Desarrollador Web',
 name: 'Irving Frias',
-text: 'Passionate Web Developer crafting modern & scalable applications.',
+text: 'Desarrollador web apasionado que crea aplicaciones modernas y escalables.',
 location: 'Nayarit, Mexico.',
-birthdate: '25 Feb 2001.'
+birthdate: '25 Feb 2001.',
+cta_text: 'Contactame'
 } %}
 
-{% include "../../templates/ContactDialog.twig" %}
+{% include "../../templates/ContactDialog.twig" with {
+heading: 'Contactame en las siguientes redes sociales',
+close_text: 'Cerrar'
+} %}
 {% endblock %}
