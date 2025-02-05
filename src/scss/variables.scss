@@ -1,12 +1,14 @@
 $dark: #202931;
 $light: #FFF;
 $text-color: $dark;
-$orange: #fe5b45;
+$blue: #4A9DFF;
+$blue-hover: #1E7BEF;
 
 /* Light theme styles */
 @media (prefers-color-scheme: light) {
   $text-color: $dark;
-  $orange: #ee5927;
+  $blue: #005FCC;
+  $blue-hover: #0047A5;
 
   body {
     background-color: $light;
@@ -21,7 +23,7 @@ $orange: #fe5b45;
 /* Dark theme styles */
 @media (prefers-color-scheme: dark) {
   $text-color: $light;
-  $orange: #fe5b45;
+  $blue: #4A9DFF;
 
   body {
     background-color: $dark;

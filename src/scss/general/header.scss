@@ -13,7 +13,9 @@ header {
     }
 
     .header-menu {
-      gap: 20px;
+      .header-menu-wrapper {
+        gap: 20px;
+      }
 
       li {
         a {
@@ -21,6 +23,11 @@ header {
           text-decoration: none;
           font-weight: 700;
           text-transform: uppercase;
+          color: $blue;
+
+          &:hover {
+            color: $blue-hover;
+          }
         }
       }
     }
@@ -189,7 +196,9 @@ header {
   header {
     nav {
       .header-menu {
-        gap: 16px;
+        .header-menu-wrapper {
+          gap: 16px;
+        }
       }
     }
   }
@@ -205,8 +214,10 @@ header {
       }
 
       .header-menu {
-        gap: 24px;
-        margin: 0;
+        .header-menu-wrapper {
+          gap: 24px;
+          margin: 0;
+        }
 
         li {
           a {
