@@ -9,10 +9,5 @@
         User-agent: *
         Disallow: /private/
 
-        # X-Robots-Tag for controlling indexing and crawling behavior for specific file types
-        # Example: Blocking indexing for PDF files
-        X-Robots-Tag: noindex, nofollow
-        X-Robots-Tag: noindex, nofollow, noarchive
-
         # End of robots.txt
     
