@@ -1,0 +1,25 @@
+<section class="projects">
+  <div class="container title-container">
+    <h2 class="title">{{ title }}</h2>
+  </div>
+
+  <div class="project-block">
+    <div class="content-projects container">
+      {% for project in projects %}
+        <div class="section-1" data-swapy-slot="slot-{{ loop.index }}">
+          <div class="content-a h-100" data-swapy-item="item-{{ loop.index }}">
+            <div class="project h-100" id="project-{{ loop.index }}" style="background-color: {{ project.bg_color }}; --text-color: {{ project.text_color }};">
+              <div class="content container">
+                <h3>{{ project.heading }}</h3>
+
+                <div class="text">
+                  <p>{{ project.text }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -19,6 +19,24 @@ birthdate: 'Feb 25 2001.',
 cta_text: 'Contact me'
 } %}
 
+{% include "../templates/Project.twig" with {
+  title: 'Projects',
+  projects: [
+    {
+      heading: 'CSUDH',
+      text: 'Academics are the heart of California State University, Dominguez Hills. From face-to-face interactions to learning in the comfort of your own home, we offer a learning community where you can pursue your academic goals towards your future. Our urban university adheres to an environment of academic excellence, community service, and liberal education. We encourage students to learn outside the classroom by taking advantage of the many internship and research opportunities available out there.',
+      bg_color: '#860038',
+      text_color: '#FFF',
+    },
+    {
+      heading: 'Rawls TTU',
+      text: 'The Rawls College of Business Jerry S. Rawls College of Business Administration, commonly referred to as Rawls Business is the business school of Texas Tech University in Lubbock, Texas.',
+      bg_color: '#900',
+      text_color: '#FFF',
+    },
+  ],
+} %}
+
 {% include "../templates/ContactDialog.twig" with {
 heading: 'Contact me on the following social networks',
 close_text: 'Close'

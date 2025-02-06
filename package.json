@@ -26,5 +26,8 @@
     "sass": "^1.83.4",
     "sass-loader": "^12.6.0",
     "twig": "^1.17.1"
+  },
+  "dependencies": {
+    "swapy": "^1.0.5"
   }
 }

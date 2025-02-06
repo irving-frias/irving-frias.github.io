@@ -14,6 +14,8 @@ let compileTimeout;
 function compileJS() {
     // Array of JavaScript files in the order you want them to be compiled
     const jsFiles = [
+        'node_modules/swapy/dist/swapy.min.js',
+        'src/js/project.js',
         'src/js/transform-urls.js',
         'src/js/main.js', // Ensure the main.js is last if it's the entry point
     ];
