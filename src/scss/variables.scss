@@ -1,7 +1,7 @@
 $dark: #202931;
 $light: #FFF;
 $text-color: $dark;
-$blue: #4A9DFF;
+$blue: #0064E1;
 $blue-hover: #1E7BEF;
 
 /* Light theme styles */
@@ -17,13 +17,31 @@ $blue-hover: #1E7BEF;
     * {
       color: $dark;
     }
+
+    button {
+      background-color: $blue;
+      color: $light;
+
+      &:hover {
+        background-color: $blue-hover;
+      }
+    }
+
+    a {
+      color: $blue;
+
+      &:hover {
+        color: $blue-hover;
+      }
+    }
   }
 }
 
 /* Dark theme styles */
 @media (prefers-color-scheme: dark) {
   $text-color: $light;
-  $blue: #4A9DFF;
+  $blue: #00aaff;
+  $blue-hover: #0088cc;
 
   body {
     background-color: $dark;
@@ -31,6 +49,23 @@ $blue-hover: #1E7BEF;
 
     * {
       color: $light;
+    }
+
+    button {
+      background-color: $blue;
+      color: $dark;
+
+      &:hover {
+        background-color: $blue-hover;
+      }
+    }
+
+    a {
+      color: $blue;
+
+      &:hover {
+        color: $blue-hover;
+      }
     }
   }
 }
