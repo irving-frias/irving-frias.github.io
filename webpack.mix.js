@@ -6,6 +6,7 @@ const fs_extra = require('fs-extra');
 const twig = require('twig');
 const matter = require('gray-matter');
 const chokidar = require('chokidar');
+const path = require('path');
 
 let compileTimeout;
 
@@ -18,7 +19,9 @@ function compileJS() {
     ];
 
     // Compile the JS files in the specified order
-    mix.js(jsFiles, 'dist/js/app.js').minify('dist/js/app.js');
+    mix.js(jsFiles, 'dist/js/app.js')
+   .minify('dist/js/app.js')
+   //.version();
 
     console.log('✔ JS compilado');
 }
@@ -28,7 +31,8 @@ function compileJS() {
 function compileSCSS() {
     mix.sass('src/scss/main.scss', 'dist/css').options({
         postCss: [require('autoprefixer'), require('cssnano')({ preset: 'default' })],
-    });
+    })
+    //.version();
     console.log('✔ SCSS compilado');
 }
 
@@ -168,9 +172,15 @@ function generateHtaccess(routes) {
 
 // 📂 **Copiar la carpeta de assets si existe**
 function copyAssets() {
-    if (fs.existsSync('assets')) {
-        mix.copyDirectory('assets', 'dist/assets');
+    const assetsPath = path.resolve(__dirname, 'assets');
+    const distPath = path.resolve(__dirname, 'dist/assets');
+
+    if (fs.existsSync(assetsPath)) {
+        fs_extra.ensureDirSync(distPath); // Asegura que la carpeta destino existe
+        mix.copyDirectory(assetsPath, distPath);
         console.log('✔ Archivos de assets copiados');
+    } else {
+        console.warn('⚠ La carpeta assets no existe, no se copiaron archivos.');
     }
 }
 
