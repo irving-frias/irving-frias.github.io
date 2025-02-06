@@ -1,22 +1,25 @@
 .hero {
   .hero-wrapper {
-    display: flex;
+    display: grid;
     align-items: center;
     gap: 2rem;
     text-align: left;
+    grid-template-columns: 1fr;
 
     .hero-image {
       position: relative;
-      width: 220px;
-      height: 220px;
+      width: 420px;
+      height: 420px;
+      margin: auto;
 
       img {
-        width: 220px;
-        height: 220px;
+        width: 420px;
+        height: 420px;
         border-radius: 50%;
         border: 4px solid $blue;
         box-shadow: 0 0 10px $blue;
         animation: heartbeat 4s ease-in-out infinite;
+        object-fit: cover;
 
         &:hover {
           animation-play-state: paused;
@@ -67,6 +70,14 @@
         cursor: pointer;
         transition: 0.3s;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    .hero-wrapper {
+      grid-template-columns: 1fr 1fr;
     }
   }
 }
