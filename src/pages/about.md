@@ -1,37 +1,74 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: "About"
+title: "About Me"
+description: "Learn more about Irving Frias, a Senior Drupal Full-Stack Developer with 6+ years of experience in enterprise Drupal solutions."
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+<div class="flex flex-col md:flex-row gap-8 items-start mb-10">
+  <div class="w-full md:w-2/3">
+    <h2 class="text-3xl font-bold mb-4">Irving Frias</h2>
+    <p class="text-xl text-foreground/80 mb-4">
+      Senior Drupal Full-Stack Developer with 6+ years of experience creating scalable, enterprise-level web solutions.
+    </p>
+  </div>
+</div>
 
-![Astro Paper](public/astropaper-og.jpg)
+## My Journey
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+My career in web development began over 6 years ago, and I've since specialized in the Drupal ecosystem. What started as backend development has evolved into a comprehensive full-stack expertise, allowing me to deliver complete solutions from architecture design to final implementation.
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+I'm passionate about solving complex problems with elegant solutions, whether it's building custom modules, architecting multisite platforms, or creating modern component-based themes.
 
-## Features
+## Technical Philosophy
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
+I believe in **pragmatic development** — using the right tool for the job while maintaining clean, maintainable code. My approach combines:
 
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
+- **Component-driven development** with SDC (Single Directory Components)
+- **Progressive enhancement** for accessibility and performance
+- **Automation** to reduce repetitive tasks and ensure consistency
+- **Continuous learning** to stay current with evolving technologies
 
-and so much more.
+## Core Expertise
 
-## Show your support
+### 🎨 Frontend Development
+- **Modern Theming:** SDC, component-based architecture, reusable patterns
+- **CSS/Styling:** Sass, Bootstrap 4/5, Tailwind CSS, responsive design
+- **Build Tools:** Gulp, Webpack, automation workflows
+- **Documentation:** Storybook, Pattern Lab for design systems
 
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
+### ⚙️ Backend & Architecture
+- **Drupal Development:** Custom modules, APIs, integrations
+- **System Architecture:** Multisite, multitenant solutions
+- **Content Strategy:** Paragraphs, Layout Builder, multilingual setups
+- **Performance:** Caching strategies, database optimization
 
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
+### 🔄 DevOps & Workflow
+- **CI/CD:** GitHub Actions pipelines, automated testing
+- **Deployment:** Docker, automated workflows
+- **Collaboration:** Git workflows, code review processes
+- **Performance Tuning:** Monitoring, optimization techniques
 
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
+## Beyond Code
 
-Kyay zuu! 🙏🏼
+When I'm not developing, I'm usually:
+
+- **Learning** new technologies and methodologies
+- **Mentoring** other developers in the Drupal ecosystem
+- **Writing** technical documentation and sharing knowledge
+
+## Currently Exploring
+
+- **Advanced React patterns** and state management
+- **TypeScript** for type-safe JavaScript development
+- **Astro** for content-focused static sites (like this portfolio!)
+- **Performance optimization** techniques for large-scale applications
+
+## Let's Connect
+
+I'm always interested in hearing about challenging projects, innovative solutions, or opportunities to collaborate. Whether you're looking for a developer, need architectural advice, or just want to discuss technology, feel free to reach out.
+
+**📍 GitHub:** [github.com/irving-frias](https://github.com/irving-frias)  
+**📧 Email:** [irvingfrias41@gmail.com](mailto:irvingfrias41@gmail.com)  
+**💼 LinkedIn:** [Connect with me](https://linkedin.com/in/irving-frias)
+
+---

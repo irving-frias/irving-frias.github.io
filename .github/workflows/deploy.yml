@@ -1,0 +1,60 @@
+name: Deploy Astro to GitHub Pages
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:  # Manual trigger
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for proper git info
+          
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'  # Astro recommends Node 18+
+          cache: 'npm'
+          
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm ci
+        env:
+          CI: true
+          
+      # 4. Build Astro site
+      - name: Build Astro site
+        run: npm run build
+        env:
+          # Add any environment variables needed for build
+          PUBLIC_SITE_URL: ${{ github.event.repository.html_url }}
+          
+      # 5. Setup Pages
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+        
+      # 6. Upload artifact
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'  # Default Astro output directory
+          
+      # 7. Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'

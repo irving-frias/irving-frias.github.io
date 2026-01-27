@@ -8,6 +8,7 @@ import IconFacebook from "@/assets/icons/IconFacebook.svg";
 import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconPinterest from "@/assets/icons/IconPinterest.svg";
 import { SITE } from "@/config";
+import type { GiscusProps } from "@giscus/react";
 
 interface Social {
   name: string;
@@ -19,25 +20,19 @@ interface Social {
 export const SOCIALS: Social[] = [
   {
     name: "GitHub",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://github.com/irving-frias",
     linkTitle: `${SITE.title} on GitHub`,
     icon: IconGitHub,
   },
   {
-    name: "X",
-    href: "https://x.com/username",
-    linkTitle: `${SITE.title} on X`,
-    icon: IconBrandX,
-  },
-  {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/username/",
+    href: "https://www.linkedin.com/in/irving-frias/",
     linkTitle: `${SITE.title} on LinkedIn`,
     icon: IconLinkedin,
   },
   {
     name: "Mail",
-    href: "mailto:yourmail@gmail.com",
+    href: "mailto:irvingfrias41@@gmail.com",
     linkTitle: `Send an email to ${SITE.title}`,
     icon: IconMail,
   },
@@ -81,3 +76,16 @@ export const SHARE_LINKS: Social[] = [
     icon: IconMail,
   },
 ] as const;
+
+export const GISCUS: GiscusProps = {
+  repo: "irving-frias/irving-frias.github.io",
+  repoId: "R_kgDORB3vcw",
+  category: "Announcements",
+  categoryId: "DIC_kwDORB3vc84C1fzX",
+  mapping: "pathname",
+  reactionsEnabled: "1",
+  emitMetadata: "1",
+  inputPosition: "bottom",
+  lang: "en",
+  loading: "lazy",
+};
