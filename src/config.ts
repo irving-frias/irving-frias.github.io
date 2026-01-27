@@ -2,7 +2,7 @@ export const SITE = {
   website: "https://irving-frias.github.io/", // replace this with your deployed domain
   author: "Irving Frias",
   profile: "https://github.com/irving-frias/irving-frias",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
+  desc: "Senior Drupal Full-Stack Developer specializing in modern Drupal development. Expertise includes SDC theming, multisite architecture, custom modules, and DevOps automation. Available for complex Drupal projects.",
   title: "Irving Frias",
   ogImage: "og.jpg",
   lightAndDarkMode: true,
@@ -11,11 +11,6 @@ export const SITE = {
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: true,
   showBackButton: true, // show back button in post detail
-  editPost: {
-    enabled: true,
-    text: "Edit page",
-    url: "https://github.com/irving-frias/irving-frias/edit/main/",
-  },
   dynamicOgImage: true,
   dir: "ltr", // "rtl" | "auto"
   lang: "en", // html lang code. Set this empty and default will be "en"
