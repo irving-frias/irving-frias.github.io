@@ -42,6 +42,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"],
+      include: ['@webgpu/types']
     },
   },
   image: {
