@@ -4,7 +4,7 @@ export const SITE = {
   profile: "https://github.com/irving-frias/irving-frias",
   desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
   title: "Irving Frias",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 4,
