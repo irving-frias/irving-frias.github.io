@@ -357,8 +357,6 @@ Your module is now ready for deployment on any Drupal 9 or 10 site. It provides 
 3. Create documentation for site builders and developers
 4. Consider adding integration with popular contributed modules
 
-The complete source code for this module is available on [GitHub Repository Link] for easy installation and customization.
-
 ---
 
 *Need help with any specific enhancement or have questions about implementing this module in your project? Let me know in the comments below!*
