@@ -19,13 +19,10 @@ tags:
   - Tutorial
   - Development
 description:
-  Learn how to create a custom Drupal module that tracks the last page visited by each user. Improve UX and gain valuable insights into browsing behavior.
+  Dive into the client-side implementation of our Drupal tracking module. Follow step-by-step instructions to capture real-time user navigation using JavaScript, AJAX calls, and localStorage techniques that seamlessly integrate with Drupal's ecosystem.
 ---
 
 ## Table of contents
-
-**Important note:** Make sure your module is in `modules/custom/` and not directly in `modules/`, as Drupal ignores modules in the root of `modules/` for security reasons.
-
 
 # **Step 2: Implementing Client-Side Tracking with JavaScript**
 

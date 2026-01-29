@@ -19,7 +19,7 @@ tags:
   - Tutorial
   - Development
 description:
-  Learn how to create a custom Drupal module that tracks the last page visited by each user. Improve UX and gain valuable insights into browsing behavior.
+  Discover why tracking user navigation in Drupal is crucial for improving user experience. Learn the foundational concepts and architecture needed to build a custom module that records each user's last visited page, setting the stage for personalized engagement.
 ---
 
 ## Table of contents

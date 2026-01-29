@@ -19,7 +19,7 @@ tags:
   - Tutorial
   - Development
 description:
-  Learn how to create a custom Drupal module that tracks the last page visited by each user. Improve UX and gain valuable insights into browsing behavior.
+  Learn how to validate and test your Drupal tracking module's functionality. This guide covers testing methodologies, debugging techniques, and creating visual feedback to ensure accurate capture and display of users' last visited pages.
 ---
 
 ## Table of contents

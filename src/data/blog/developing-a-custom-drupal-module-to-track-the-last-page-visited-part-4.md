@@ -19,7 +19,7 @@ tags:
   - Tutorial
   - Development
 description:
-  Learn how to create a custom Drupal module that tracks the last page visited by each user. Improve UX and gain valuable insights into browsing behavior.
+  Elevate your Drupal tracking module with advanced features. Implement user-specific dashboards, data export capabilities, privacy controls, and performance optimizations to transform basic tracking into a powerful user behavior analytics tool.
 ---
 
 ## Table of contents
