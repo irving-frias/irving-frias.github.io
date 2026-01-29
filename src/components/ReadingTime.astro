@@ -11,7 +11,7 @@ interface Props {
 const { content, language = "en", showIcon = true } = Astro.props;
 
 // Function to calculate reading time
-const calculateReadingTime = (text: string) => {
+const calculateReadingTime = (text: string | undefined) => {
   // Remove HTML tags if present
   const cleanText = text.replace(/<[^>]*>/g, "");
   
