@@ -1,0 +1,78 @@
+
+---
+import { SITE } from "@/config";
+
+interface Props {
+  content: string | undefined;
+  language?: "en" | "es";
+  showIcon?: boolean;
+}
+
+const { content, language = "en", showIcon = true } = Astro.props;
+
+// Function to calculate reading time
+const calculateReadingTime = (text: string) => {
+  // Remove HTML tags if present
+  const cleanText = text.replace(/<[^>]*>/g, "");
+  
+  // Count words (including Spanish characters)
+  const wordCount = cleanText
+    .trim()
+    .split(/\s+/)
+    .filter(word => word.length > 0)
+    .length;
+  
+  // Average reading speed: 200-250 words per minute
+  const wordsPerMinute = language === "es" ? 200 : 230;
+  const minutes = Math.max(1, Math.ceil(wordCount / wordsPerMinute));
+  
+  return minutes;
+};
+
+const readingTime = calculateReadingTime(content);
+
+// Localized text
+const texts = {
+  en: {
+    minute: "min read",
+    minutes: "min read",
+  },
+  es: {
+    minute: "min de lectura",
+    minutes: "min de lectura",
+  },
+};
+
+const currentTexts = texts[language];
+const timeText = readingTime === 1 ? currentTexts.minute : currentTexts.minutes;
+---
+
+<div class="reading-time flex items-center gap-1">
+  {showIcon && (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-4 w-4 text-current"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+      />
+    </svg>
+  )}
+  <span class="text-sm">
+    {readingTime} {timeText}
+  </span>
+</div>
+
+<style>
+  .reading-time {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-text-secondary);
+  }
+</style>

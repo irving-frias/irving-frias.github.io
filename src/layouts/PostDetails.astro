@@ -8,6 +8,7 @@ import Datetime from "@/components/Datetime.astro";
 import ShareLinks from "@/components/ShareLinks.astro";
 import BackButton from "@/components/BackButton.astro";
 import BackToTopButton from "@/components/BackToTopButton.astro";
+import ReadingTime from "@/components/ReadingTime.astro";
 import { getPath } from "@/utils/getPath";
 import { slugifyStr } from "@/utils/slugify";
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
@@ -35,6 +36,10 @@ const {
 } = post.data;
 
 const { Content } = await render(post);
+const contentString = await render(post).then(({ Content, ...rest }) => {
+  // This is a simplified approach - you might need to extract content differently
+  return post.body;
+});
 
 let ogImageUrl: string | undefined;
 
@@ -95,6 +100,12 @@ const nextPost =
     >
       {title}
     </h1>
+    <div class="my-2 flex items-center gap-2">
+      <ReadingTime 
+        content={contentString} 
+        showIcon={true} 
+      />
+    </div>
     <div class="my-2 flex items-center gap-2">
       <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
     </div>
