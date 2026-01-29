@@ -1,7 +1,5 @@
 
 ---
-import { SITE } from "@/config";
-
 interface Props {
   content: string | undefined;
   language?: "en" | "es";
@@ -13,7 +11,7 @@ const { content, language = "en", showIcon = true } = Astro.props;
 // Function to calculate reading time
 const calculateReadingTime = (text: string | undefined) => {
   // Remove HTML tags if present
-  const cleanText = text.replace(/<[^>]*>/g, "");
+  const cleanText = (text || "").replace(/<[^>]*>/g, "");
   
   // Count words (including Spanish characters)
   const wordCount = cleanText
